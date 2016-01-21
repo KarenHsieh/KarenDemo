@@ -1,0 +1,189 @@
+
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+        <link rel="stylesheet" href="js/fancyBox/source/jquery.fancybox.css" type="text/css" media="screen" />
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+        <script type="text/javascript" src="js/jsScroller.js"></script>
+        <script type="text/javascript" src="js/jsScrollbar.js"></script>
+
+        <script type="text/javascript" src="js/fancyBox/source/jquery.fancybox.pack.js"></script>
+
+        <script type="text/javascript" src="Lightbox/jquery.lightbox_me.js"></script>
+    </head>
+
+    <body>
+        <div class="container" align="center">
+        <!-- <div width="990px" align="center" class="container-fluid">
+            <div id="nav_bar">
+                <div style="display: inline-block; background-image: url('image/nav_logo.png'); width: 756px; height: 85px; margin:0"></div>
+                <div style="display: inline-block; background-image: url('image/nav_service.png'); width: 119px; height: 85px;"></div>
+                <div style="display: inline-block; background-image: url('image/nav_location.png'); width: 118px; height:85px;"></div>
+            </div>
+
+           <!-- <div id="nav_bar2" height="85px;">
+                <img src="image/nav_logo.png" style="max-width:756px; width: 100%;">
+                <img src="image/nav_service.png" style="max-width:119px; width: 100%;">
+                <img src="image/nav_location.png" style="max-width: 118px; width: 100%;">
+            </div>-->
+
+        <!--</div>-->
+
+            <!--background-color:#3c763d; opacity:0.3;-->
+
+            <table style="width: 100%;">
+                <tr>
+                    <td style="background-image: url('image/nav_logo.png'); width:756px; height:85px;">
+                        <div id="go_official" style="width: 165px; height: 55px; float: left; margin-left: 15px; margin-bottom: 10px; cursor: pointer"></div>
+                    </td>
+                    <td style="background-image: url('image/nav_service.png'); width:119px; height:85px;">
+                        <div id="go_service" style="width: 90px; height: 35px; float: left; margin-left: 5px; margin-top: 25px; cursor: pointer"></div>
+                    </td>
+                    <td style="background-image: url('image/nav_location.png'); width:118px; height:85px;">
+                        <div id="go_location" style="width: 90px; height: 35px; float: left; margin-left: 5px; margin-top: 25px; cursor: pointer"></div>
+                    </td>
+                </tr>
+
+                <tr style="background-color: #f9f2e3;">
+                    <td colspan="3">
+                        <div style="width:43%; height: 712px; float: left">
+                            <table>
+                                <tr>
+                                    <td colspan="4">
+                                        <img src="image/body_main.png">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="4" style="background-image: url('image/body_main_bottom.png'); height: 47px;">
+
+                                        <div id="go_action" style="width: 48px; height: 25px; float: right; margin-right: 15px; margin-bottom: 10px; cursor: pointer"></div>
+                                        <!--<img src="image/body_main_bottom.png">-->
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="background-image: url('image/body_function_1.png'); width:142px; height:138px;">
+                                        <div id="fn1" style="width: 70px; height: 95px; float: right; margin-right: 21px; margin-bottom: 0px; cursor: pointer"></div>
+                                    </td>
+
+                                    <td style="background-image: url('image/body_function_2.png'); width:103px; height:138px;">
+                                        <div id="fn2" style="width: 70px; height: 95px; float: right; margin-right: 23px; margin-bottom: 0px; cursor: pointer"></div>
+                                    </td>
+
+                                    <td style="background-image: url('image/body_function_3.png'); width:103px; height:138px;">
+                                        <div id="fn3" style="width: 70px; height: 95px; float: right; margin-right: 24px; margin-bottom: 0px; cursor: pointer"></div>
+                                    </td>
+
+                                    <td style="background-image: url('image/body_function_4.png'); width:82px; height:138px;">
+                                        <div id="fn4" style="width: 70px; height: 95px; float: right; margin-right: 2px; margin-bottom: 0px; cursor: pointer"></div>
+                                    </td>
+
+                                </tr>
+
+                                <tr>
+                                    <td colspan="4" style="background-image: url('image/body_function_bottom.png'); height:76px;">
+                                        <div id="go_notice" style="width: 160px; height: 25px; float: right; margin-right: 7px; margin-bottom: 21px; cursor: pointer"></div>
+                                        <!--<img src="image/body_function_bottom.png">-->
+
+                                    </td>
+                                </tr>
+
+                            </table>
+                        </div>
+                        <!--<div style="width:50%; background-image: url('image/body_main_image.png')"></div>-->
+                        <div style="width:57%; height: 712px; float: left; background-color: #f9f2e3;">
+                            <img src="image/body_main_image.png">
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="3" height="63px" style="background-color: #204482; text-align: center">
+                        <font style="color: #FFFFFF">mma.sinopac.com &nbsp;&nbsp;&nbsp; 24小時客服專線  &nbsp;&nbsp;&nbsp;  02-2505-9999</font>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+    </body>
+</html>
+
+<script type="text/javascript">
+    $(document).ready(function() {
+
+        $("#go_official").click(function(){
+            var url = "https://mma.sinopac.com/MemberPortal/Member/NextWebLogin.aspx";
+            window.open(url, '_blank');
+        });
+
+        $("#go_service").click(function(){
+            var url = "https://bank.sinopac.com/MMA8/bank/service/service-index.html";
+            window.open(url, '_blank');
+        });
+
+        $("#go_location").click(function(){
+            var url = "https://mma.sinopac.com/MMA7txt/CustomerService/BranchService/mma_branch.html";
+            window.open(url, '_blank');
+        });
+
+        $("#go_action").click(function(){
+            var url = "https://mma.sinopac.com/Fund/FundQueries/RiskTest_First.aspx?kyc=Fund";
+            window.open(url, '_blank');
+        });
+
+        $("#go_notice").click(function(){
+            // 跳iframe
+
+        });
+
+
+        // 養錢母
+        $("#fn1").click(function(){
+            var url = "https://mma.sinopac.com/MemberPortal/CustomerService/ContentFrame.aspx?url=promote/100/fund.html";
+            window.open(url, '_blank');
+        });
+
+        // 挑基金
+        $("#fn2").click(function(){
+            var url = "http://mmafund.sinopac.com/main.asp?sUrl=$W$SINOPACFOCUSFUND]DJHTM{T}2";
+            window.open(url, '_blank');
+        });
+
+        // 看報告
+        $("#fn3").click(function(){
+            var url = "https://mma.sinopac.com/mma/Plan/InvestmentReport.aspx";
+            window.open(url, '_blank');
+        });
+
+        // 動理財
+        $("#fn4").click(function(){
+            var url = "https://goo.gl/Xqy39L";
+            window.open(url, '_blank');
+        });
+
+        /*$("#fancybox-manual-b").click(function() {
+            $.fancybox.open({
+                href : 'iframe.html',
+                type : 'iframe',
+                padding : 5
+            });
+        });
+
+        $('#test_btn').click(function(e) {
+            $('#test_block').lightbox_me({
+                centered: true,
+                onLoad: function() {
+                    $('#sign_up').find('input:first').focus()
+                }
+            });
+            e.preventDefault();
+        });*/
+    });
+</script>
