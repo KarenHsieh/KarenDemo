@@ -17,37 +17,69 @@
         <script type="text/javascript" src="js/jquery.blockUI.js"></script>
     </head>
 
-    <body style="background-color: #f9f2e3;">
+    <style>
+        img, table {
+            max-width: 100%;
+        }
+    </style>
 
-        <div style="height:85px; width: 100%; background-color: #FFFFFF; position:relative; " align="center">
-            <table class="container">
+    <body>
+
+        <div style="width: 100%; height: 57px; background-color: #FFFFFF">
+            <table>
                 <tr>
-                    <td style="background-image: url('image/nav_logo.png'); background-repeat:no-repeat; width:75%; height:85px;">
-                        <div id="go_official" style="width: 165px; height: 55px; float: left; margin-left: 15px; margin-bottom: 10px; cursor: pointer"></div>
+                    <td style="background-image: url('image/mobile/logo.png'); background-repeat: no-repeat; height: 57px; width: 50vw; background-size: cover;">
+                        <div id="go_official" style="width: 85%; height: 55px; float: left; margin-left: 15px; margin-bottom: 10px; cursor: pointer"></div>
                     </td>
-                    <td style="background-image: url('image/nav_service.png'); background-repeat:no-repeat; width:14%; height:85px;">
-                        <div id="go_service" style="width: 90px; height: 35px; float: left; margin-left: 5px; margin-top: 25px; cursor: pointer"></div>
+                    <td style="background-image: url('image/mobile/service.png'); background-repeat: no-repeat; height: 57px; width: 27vw; background-size: cover;">
+                        <div id="go_service" style="/*background-color: #3c763d; opacity:0.3; */ width: 90%; height: 35px; float: left; margin-left: 5px; margin-top: 20px; cursor: pointer"></div>
                     </td>
-                    <td style="background-image: url('image/nav_location.png'); background-repeat:no-repeat; width:13%; height:85px;">
-                        <div id="go_location" style="width: 90px; height: 35px; float: left; margin-left: 5px; margin-top: 25px; cursor: pointer"></div>
+                    <td style="background-image: url('image/mobile/location.png'); background-repeat: no-repeat; height: 57px; width: 23vw; background-size: cover;">
+                        <div id="go_location" style="/*background-color: #2b669a; opacity:0.3; */width: 90%; height: 35px; float: left; margin-left: 5px; margin-top: 20px; cursor: pointer"></div>
                     </td>
                 </tr>
             </table>
-            <div style="width:100%; height: 6px; background-color: #e72410; position:absolute; bottom: 0px;"></div>
         </div>
 
-        <div class="container" align="center" style="background-color: #f9f2e3;">
+        <div style="width: 100%; height: 6px; background-color: #e72410"></div>
 
+        <div class="container-fluid" align="center" style="background-color: #f9f2e3;">
+
+            <div class="row">
+                <div class="col-xs-12">
+                    <img src="image/mobile/main.png" style="max-width: 100%;">
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-xs-12">
+                    <div style="width: 100%;" style="position: relative">
+
+
+                    <img src="image/mobile/function_1.png" style="max-width: 27%; width: 100%; float: left;">
+                    <img src="image/mobile/function_2.png" style="max-width: 23%; width: 100%; float: left;">
+                    <img src="image/mobile/function_3.png" style="max-width: 22.5%; width: 100%; float: left;">
+                    <img src="image/mobile/function_4.png" style="max-width: 24.5%; width: 100%; float: left;">
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-xs-12">
+                    <img src="image/mobile/function_bottom.png" style="max-width: 100%;">
+                </div>
+            </div>
 
         </div>
 
+        <!--footer-->
         <div style="height:63px; width: 100%; background-color: #204482; line-height: 63px; text-align: center;">
 
-            <img src="image/footer_text.png" style="max-height: 60px;">
+            <img src="image/mobile/footer_text.png" style="max-height: 60px;">
         </div>
 
        <div id="close_btn" style="position:absolute; z-index:1111; max-width:38px;">
-            <img src="image/close_btn.png" style="width:100%;">
+            <img src="image/mobile/close_btn.png" style="width:100%;">
         </div>
 
         <div id="notice_frame" style="background-color: #FFFFFF; display: none; overflow-y: scroll; position: relative;" align="center">
