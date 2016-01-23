@@ -1,0 +1,251 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+    <script type="text/javascript" src="js/jsScroller.js"></script>
+    <script type="text/javascript" src="js/jsScrollbar.js"></script>
+
+    <script type="text/javascript" src="js/jquery.blockUI.js"></script>
+</head>
+
+<style>
+    img, table {
+        max-width: 100%;
+    }
+</style>
+
+<body>
+
+<div style="width: 100%; height: 57px; background-color: #FFFFFF">
+    <div style="display: inline-table; width: 50%; line-height: 57px; text-align: center">
+        <a href="https://mma.sinopac.com/MemberPortal/Member/NextWebLogin.aspx" target="_blank">
+            <img src="image/mobile/logo.png" style="max-width: 100%; max-height: 56px;">
+        </a>
+    </div>
+
+    <div style="display: inline-table; width: 49%; line-height: 57px; text-align: center">
+        <img src="image/mobile/nav_right.png" style="max-width: 100%; max-height: 56px;">
+        <div style="/*background-color: #3c763d;*/ opacity:0.3; width: 100%; height:40px; position: relative; bottom: 35px;">
+            <div id="go_service" style="display: inline-block; width: 50%; height:100%; float: left; cursor: pointer"></div>
+            <div id="go_location" style="display: inline-block; width: 50%; height:100%; float: right; cursor: pointer"></div>
+        </div>
+    </div>
+
+</div>
+
+<div style="width: 100%; height: 6px; background-color: #e72410"></div>
+
+<div class="container-fluid" align="center" style="background-color: #f9f2e3;">
+
+    <div class="row">
+        <div class="col-xs-12">
+            <img src="image/mobile/main.png" style="max-width: 100%;">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12">
+            <img src="image/mobile/main_bottom_A.png" style="max-width: 100%;">
+            <div id="go_action" style="/*background-color: #3c763d; opacity:0.3;*/ width: 15%; height: 8vw; float: right; position:absolute; left: 30%; bottom: 1vw;"></div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-xs-12">
+
+            <div style="width: 100%;  height: 28vw;">
+                <img src="image/mobile/function_block.png" style="max-width: 100%; ">
+                <div style="width: 100%; height:100%; position: relative; bottom: 25vw;">
+                    <div id="fn1" style="/*background-color: #3c763d; opacity:0.3;*/ display: inline-block; width: 25%; height:100%; cursor: pointer; position: absolute; left: 0px;"></div>
+                    <div id="fn2" style="/*background-color: #2b669a; opacity:0.3;*/ display: inline-block; width: 25%; height:100%; cursor: pointer; position: absolute; left: 25%;"></div>
+                    <div id="fn3" style="/*background-color: #3c763d; opacity:0.3;*/ display: inline-block; width: 25%; height:100%; cursor: pointer; position: absolute; left: 50%;"></div>
+                    <div id="fn4" style="/*background-color: #2b669a; opacity:0.3;*/ display: inline-block; width: 25%; height:100%; cursor: pointer; position: absolute; left: 75%;"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-xs-12" style="position: relative;">
+            <img src="image/mobile/function_bottom.png" style="max-width: 100%;">
+            <div id="go_notice" style="/*background-color: #3c763d; opacity:0.3; */width: 45%; height: 9vw; float: right; position:absolute; right: 2vw; top: 0;"></div>
+        </div>
+    </div>
+
+</div>
+
+<!--footer-->
+<div id="footer" style="height:63px; width: 100%; background-color: #204482; line-height: 63px; text-align: center;">
+
+    <img src="image/mobile/footer_text.png" style="max-height: 60px;">
+</div>
+
+<!-- <div id="close_btn" style="position:absolute; z-index:1111; max-width:38px;">
+      <img src="image/mobile/close_btn.png" style="width:100%;">
+  </div>-->
+
+<div id="notice_frame" style="background-color: #f9f2e3; display: none; position: relative;" align="center">
+    <div id="close_btn" style="position:absolute; z-index:1111; max-width:38px; top: -13px; right: -13px;">
+        <img src="image/mobile/close_btn.png" style="width:100%;">
+    </div>
+    <div style="width: 100%;">
+        <img id="notice_img" src="image/mobile/mobile_notice_a.png" style="width: 100%">
+    </div>
+
+</div>
+
+</body>
+</html>
+
+<script type="text/javascript">
+    var dlgElement;
+    $(document).ready(function() {
+
+        $("#close_btn").css("display", "none");
+
+        $("#go_official").click(function(){
+            var url = "https://mma.sinopac.com/MemberPortal/Member/NextWebLogin.aspx";
+            window.open(url, '_blank');
+        });
+
+        $("#go_service").click(function(){
+            var url = "https://bank.sinopac.com/MMA8/bank/service/service-index.html";
+            window.open(url, '_blank');
+        });
+
+        $("#go_location").click(function(){
+            var url = "https://mma.sinopac.com/MMA7txt/CustomerService/BranchService/mma_branch.html";
+            window.open(url, '_blank');
+        });
+
+        $("#go_action").click(function(){
+            var url = "https://mma.sinopac.com/Fund/FundQueries/RiskTest_First.aspx?kyc=Fund";
+            window.open(url, '_blank');
+        });
+
+        var dlgElement = $('#notice_frame');
+
+        $("#go_notice").click(function(){
+            $('body').block({
+                message: dlgElement,
+                draggable: false,
+                css: {
+                    padding: 0,
+                    margin:  5,
+                    top: '5%',
+                    left: '3%',
+                    width: '85%',
+                    height: '100%',
+                    border: '',
+                    cursor: ''
+                },
+                overlayCSS:  {
+                    backgroundColor: '#000',
+                    opacity:         0.6,
+                    cursor:          ''
+                }
+
+            });
+
+
+            var img = $("#notice_img");
+
+            var notice_height = img.height();
+            var body_height = $("body").height();
+            var added_height = notice_height - body_height;
+
+            $("#footer").after("<div id='temp_block' style='height:" +added_height+"px'></div>");
+
+
+            $(".blockElement").css("margin-top", "50px");
+            $(".blockElement").css("margin-bottom", "50px");
+            $(".blockOverlay").css("height", "110%");
+
+            $("#close_btn").show();
+
+
+            $(".blockOverlay").click(function(){
+                $("#close_btn").css("display", "none");
+                $.unblockUI({ fadeOut: 100 });
+                $("#temp_block").remove();
+
+            });
+        });
+
+
+
+        // 計算關閉按鈕的位置
+        function closePosition() {
+
+            var window_width = $(window).width();
+            var window_height = $(window).height();
+
+            console.log("width = "+$(window).width());
+            console.log("height = "+$(window).height());
+
+            var frame_width = $("#notice_frame").width();
+            var frame_height = $("#notice_frame").height();
+
+            console.log("frame_width = "+frame_width+" / frame_height = "+frame_height);
+
+            // var offset_left = (window_width/2) - (frame_width/2);
+            //var offset_top = (window_height/2) - (frame_height/2);
+            var offset_left = $("#notice_frame").offset().left-5;
+            var offset_top = $("#notice_frame").offset().top-15;
+            console.log("offset_left = "+offset_left);
+            console.log("offset_top = "+offset_top);
+
+            var close_btn_width = $("#close_btn").width();
+            //var close_btn_height = $("#close_btn").height();
+
+            var close_left = offset_left+frame_width-(close_btn_width/2);
+            //var close_top = offset_top-(close_btn_height/2);
+            console.log("close_left = "+close_left);
+            //console.log("close_top = "+close_top);
+
+            $("#close_btn").css("left", close_left+"px");
+            $("#close_btn").css("top", offset_top+"px");
+        }
+
+        $("#close_btn").click(function(){
+            $("#close_btn").css("display", "none");
+            $.unblockUI({ fadeOut: 100 });
+            $("#temp_block").remove();
+        });
+
+
+
+        // 養錢母
+        $("#fn1").click(function(){
+            var url = "https://mma.sinopac.com/MemberPortal/CustomerService/ContentFrame.aspx?url=promote/100/fund.html";
+            window.open(url, '_blank');
+        });
+
+        // 挑基金
+        $("#fn2").click(function(){
+            var url = "http://mmafund.sinopac.com/main.asp?sUrl=$W$SINOPACFOCUSFUND]DJHTM{T}2";
+            window.open(url, '_blank');
+        });
+
+        // 看報告
+        $("#fn3").click(function(){
+            var url = "https://mma.sinopac.com/mma/Plan/InvestmentReport.aspx";
+            window.open(url, '_blank');
+        });
+
+        // 動理財
+        $("#fn4").click(function(){
+            var url = "https://goo.gl/Xqy39L";
+            window.open(url, '_blank');
+        });
+
+    });
+</script>
