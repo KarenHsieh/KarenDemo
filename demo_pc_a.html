@@ -7,17 +7,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-    <!--<link rel="stylesheet" href="js/fancyBox/source/jquery.fancybox.css" type="text/css" media="screen" />-->
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 
     <script type="text/javascript" src="js/detect_device.js"></script>
-
-    <script type="text/javascript" src="js/jsScroller.js"></script>
-    <script type="text/javascript" src="js/jsScrollbar.js"></script>
-
-    <script type="text/javascript" src="js/jquery.blockUI.js"></script>
 </head>
 
 <style>
@@ -73,8 +67,6 @@
 
     #notice_frame {
         position:absolute;
-        /*width:500px;
-        height:580px;*/
         z-index:999;
         padding-top: 15px;
         padding-right: 15px;
@@ -86,36 +78,23 @@
     }
 
 
-
-
-     /*////////////////////////*/
-
-    #notice_frame::-webkit-scrollbar-track {
-       background-image: url("image/scroll_bg.png");
-    }
-
-
-    #notice_frame::-webkit-scrollbar-thumb {
-        background-image: url("image/scroll_point.png");
-    }
-
-
 </style>
 
 <body style="background-color: #f9f2e3;">
 
-<div style="height:85px; width: 100%; background-color: #FFFFFF; position:relative; " align="center">
+<div style="height:6vw; width: 100%; background-color: #FFFFFF; position:relative; " align="center">
     <table class="container">
         <tr>
-            <td style="background-image: url('image/nav_logo.png'); background-repeat:no-repeat; width:75%; height:85px;">
-                <div id="go_official" style="width: 165px; height: 55px; float: left; margin-left: 15px; margin-bottom: 10px; cursor: pointer"></div>
+            <td style="/*background-image: url('image/nav_logo.png'); background-repeat:no-repeat; */width:75%; height:7vw;">
+                <img src="image/nav_logo.png" style="width:auto; max-height: 7vw">
+                <div id="go_official" style="background-color:#f0ad4e; opacity:0.3; width: 165px; height: 55px; float: left; margin-left: 15px; margin-bottom: 10px; cursor: pointer"></div>
             </td>
-            <td style="background-image: url('image/nav_service.png'); background-repeat:no-repeat; width:14%; height:85px;">
-                <div id="go_service" style="width: 90px; height: 35px; float: left; margin-left: 5px; margin-top: 25px; cursor: pointer"></div>
+            <td style="/*background-image: url('image/nav_right.png'); background-repeat:no-repeat; */width:14%; height:7vw; position: relative">
+                <img src="image/nav_right.png" style="width:auto; max-height:7vw;">
+                <div id="go_service" style="background-color:#f0ad4e; opacity:0.3; width: 90px; height: 35px; position:absolute; display: inline-block; cursor: pointer"></div>
+                <div id="go_location" style="background-color:#2b669a; opacity:0.3; width: 90px; height: 35px; position:absolute; display: inline-block; cursor: pointer"></div>
             </td>
-            <td style="background-image: url('image/nav_location.png'); background-repeat:no-repeat; width:13%; height:85px;">
-                <div id="go_location" style="width: 90px; height: 35px; float: left; margin-left: 5px; margin-top: 25px; cursor: pointer"></div>
-            </td>
+
         </tr>
     </table>
     <div style="width:100%; height: 6px; background-color: #e72410; position:absolute; bottom: 0px;"></div>
@@ -138,7 +117,7 @@
                         <tr>
                             <td colspan="4" style="height: 47px; position: relative">
                                 <img src="image/body_main_bottom.png" style="max-width: 100%">
-                                <div id="go_action" style="background-color: #f0ad4e; opacity:0.3; width: 4.5vw; height: 3.5vw; position:absolute; right: 0.5vw; bottom: 1vw; ;cursor: pointer"></div>
+                                <div id="go_action" style="width: 4.5vw; height: 3.5vw; position:absolute; right: 0.5vw; bottom: 1vw; ;cursor: pointer"></div>
 
                             </td>
                         </tr>
@@ -148,10 +127,10 @@
                                     <img src="image/function_block.png" style="max-width: 100%; ">
                                     <div style="width: 100%; height:100%; position:absolute; left: 0px; top: 0px;">
 
-                                        <div id="fn1" style="background-color: #3c763d; opacity:0.3; display: inline-block; width: 30%; height:85%; cursor: pointer; position: absolute; left: 0;"></div>
-                                        <div id="fn2" style="background-color: #2b669a; opacity:0.3; display: inline-block; width: 25%; height:85%; cursor: pointer; position: absolute; left: 30%;"></div>
-                                        <div id="fn3" style="background-color: #3c763d; opacity:0.3; display: inline-block; width: 25%; height:85%; cursor: pointer; position: absolute; left: 55%;"></div>
-                                        <div id="fn4" style="background-color: #2b669a; opacity:0.3; display: inline-block; width: 20%; height:85%; cursor: pointer; position: absolute; left: 80%;"></div>
+                                        <div id="fn1" style="display: inline-block; width: 30%; height:85%; cursor: pointer; position: absolute; left: 0;"></div>
+                                        <div id="fn2" style="display: inline-block; width: 25%; height:85%; cursor: pointer; position: absolute; left: 30%;"></div>
+                                        <div id="fn3" style="display: inline-block; width: 25%; height:85%; cursor: pointer; position: absolute; left: 55%;"></div>
+                                        <div id="fn4" style="display: inline-block; width: 20%; height:85%; cursor: pointer; position: absolute; left: 80%;"></div>
                                     </div>
                                 </div>
                             </td>>
@@ -161,20 +140,16 @@
                         <tr>
                             <td colspan="4" style="height:8vw; position: relative">
                                 <img src="image/body_function_bottom.png" style="max-width: 100%; ">
-                                <div id="go_notice" style="background-color: #f0ad4e; opacity:0.3; width: 14vw; height: 4vw; position:absolute; top: 1vw; right: 0; cursor: pointer"></div>
+                                <div id="go_notice" style="width: 14vw; height: 4vw; position:absolute; top: 1vw; right: 0; cursor: pointer"></div>
                             </td>
                         </tr>
 
                     </table>
                 </div>
-                <!--<div style="width:50%; background-image: url('image/body_main_image.png')"></div>-->
-                <!--<div style="width:57%; height: 712px; float: left; background-color: #f9f2e3;">
-                    <img src="image/body_main_image.png">
-                </div>-->
             </td>
             <td style="width: 1vw;"></td>
             <td style="text-align: center">
-                <div style="/*width:57%; height: 810px; float: left;*/ background-color: #f9f2e3;">
+                <div style=" background-color: #f9f2e3;">
                     <img src="image/body_main_image.png" style="max-width: 95%">
                 </div>
             </td>
@@ -183,7 +158,6 @@
 </div>
 
 <div style="height:63px; width: 100%; background-color: #204482; line-height: 63px; text-align: center;">
-    <!--<font style="color: #FFFFFF">mma.sinopac.com &nbsp;&nbsp;&nbsp; 24小時客服專線  &nbsp;&nbsp;&nbsp;  02-2505-9999</font>-->
     <img src="image/footer_text.png" style="max-height: 60px;">
 </div>
 
@@ -194,26 +168,6 @@
     <img src="image/close_btn.png" style="width:100%;">
 </div>
 <div id="background"></div>
-<!--
-<div id="notice_frame" style="background-color: #f9f2e3; display: none; overflow-y: scroll; height: 50vw; width: 75vw;" align="center">
-
-
-    <div id="Scrollbar-Container">
-        <img src="image/scroll_point.png" class="Scrollbar-Up" />
-         <img src="image/scroll_point.png" class="Scrollbar-Down" />
-        <div class="Scrollbar-Track">
-            <img src="image/scroll_point.png" class="Scrollbar-Handle" />
-        </div>
-    </div>
-    <div class="Container">
-        <div id="Scroller-1" style="margin-top: 15px">
-            <div class="Scrollbar-Container" style="width: 95%; max-height: 500px; margin-left: 10px">
-                <img src="image/pc_notice_a.png" style="width: 100%">
-            </div>
-        </div>
-    </div>
-</div>
--->
 
 <iframe src="iframe_a.html" id="notice_frame" style="width:820px; height:530px; padding: 0 !important; border: 0 !important;"> </iframe>
 
@@ -232,12 +186,6 @@
 
     $(document).ready(function() {
         $("#close_btn").css("display", "none");
-
-        /*var scroller = null;
-        var scrollbar = null;
-        scroller  = new jsScroller(document.getElementById("Scroller-1"), 400, 200);
-        console.log(scroller);
-        scrollbar = new jsScrollbar (document.getElementById("Scrollbar-Container"), scroller, false);*/
 
 
         $("#go_official").click(function(){
@@ -271,8 +219,6 @@
 
 
             $("#background").click(function(){
-                //$("#close_btn").css("display", "none");
-               // $.unblockUI();
                 $("#close_btn").hide();
                 $("#background, #notice_frame").hide();
             });
@@ -284,36 +230,21 @@
 
         function conPosition() {
             var oBackground = document.getElementById("background");
-            //var dw = $(document).width();
-            //var dh = $(document).height();
             var dw = $(window).width();
-            var dh = $(window).height();
+            var dh = $(window).height()+150;
             oBackground.style.width = dw+'px';
             oBackground.style.height = dh+'px';
             var oContent = document.getElementById("notice_frame");
-            //var oContent = document.getElementById("survey_block");
             var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
             var l = (document.documentElement.clientWidth - oContent.offsetWidth) / 2;
-            //var t = ((document.documentElement.clientHeight - oContent.offsetHeight) / 2) + scrollTop;
             var t = ((document.documentElement.clientHeight - oContent.offsetHeight) / 2);
             oContent.style.left = l + 'px';
             oContent.style.top = t + 'px';
-            //console.log("scrollTop = "+scrollTop);
-//			console.log("oContent.offsetWidth = "+oContent.offsetWidth);
-//			console.log("oContent.offsetHeight = "+oContent.offsetHeight);
-//			console.log("document.documentElement.clientWidth = "+document.documentElement.clientWidth);
-//			console.log("document.documentElement.clientHeight = "+document.documentElement.clientHeight);
-//			console.log("l = "+l);
-//			console.log("t = "+t);
 
             var btn_width = $("#close_btn").width();
-            //console.log("btn_width = "+btn_width);
             var half_btn = btn_width/2;
-            //console.log("half_btn = "+half_btn);
             var close_left = l + oContent.offsetWidth- half_btn;
-            //console.log("close_left = "+close_left);
             var close_top = t-half_btn;
-            //console.log("close_top = "+close_top);
 
             $("#close_btn").css("top", close_top+"px");
             $("#close_btn").css("left", close_left+"px");
@@ -324,8 +255,7 @@
 
 
         $("#close_btn").click(function(){
-            //$("#close_btn").css("display", "none");
-            //$.unblockUI();
+
             $("#close_btn").hide();
             $("#background, #notice_frame").hide();
         });
@@ -357,25 +287,5 @@
         });
 
 
-
-
-
-        /*$("#fancybox-manual-b").click(function() {
-         $.fancybox.open({
-         href : 'iframe.html',
-         type : 'iframe',
-         padding : 5
-         });
-         });
-
-         $('#test_btn').click(function(e) {
-         $('#test_block').lightbox_me({
-         centered: true,
-         onLoad: function() {
-         $('#sign_up').find('input:first').focus()
-         }
-         });
-         e.preventDefault();
-         });*/
     });
 </script>
