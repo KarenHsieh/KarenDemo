@@ -2,6 +2,7 @@
 //Use this or edit how you want, just give me
 //some credit!
 function jsScrollbar (o, s, a, ev) {
+	console.log(123);
 	var self = this;
 	
 	this.reset = function () {
@@ -56,6 +57,7 @@ function jsScrollbar (o, s, a, ev) {
 		}
 	};
 	this._addEvent = function (o, t, f) {
+	    console.log("add event : "+t);
 		if (o.addEventListener) o.addEventListener(t, f, false);
 		else if (o.attachEvent) o.attachEvent('on'+ t, f);
 		else o['on'+ t] = f;
@@ -105,6 +107,7 @@ function jsScrollbar (o, s, a, ev) {
 		return false;
 	};
 	this._scrollbarDrag = function (e) {
+	    console.log("scroll drag");
 		e = e ? e : event;
 		var t = parseInt(self._yHandle.style.top);
 		var v = e.clientY + document.body.scrollTop - self._trackTop;

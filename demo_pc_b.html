@@ -12,6 +12,8 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 
+        <script type="text/javascript" src="js/detect_device.js"></script>
+
         <script type="text/javascript" src="js/jsScroller.js"></script>
         <script type="text/javascript" src="js/jsScrollbar.js"></script>
 
@@ -20,6 +22,36 @@
         <script type="text/javascript" src="Lightbox/jquery.lightbox_me.js"></script>-->
         <script type="text/javascript" src="js/jquery.blockUI.js"></script>
     </head>
+
+    <style>
+        @media only screen
+        and (max-width : 768px) {
+        }
+
+        @media only screen
+        and (min-width : 768px)
+        and (max-width : 1200px) {
+        }
+
+        @media only screen
+        and (min-width : 1200px)
+        and (max-width : 1600px) {
+            #fn2 {
+                width:25% !important;
+            }
+
+            #fn3{
+                width: 25% !important;
+                left: 55% !important;
+            }
+
+            #fn4 {
+                left:80% !important;
+            }
+        }
+
+
+    </style>
 
     <body style="background-color: #f9f2e3;">
 
@@ -42,23 +74,16 @@
 
         <div class="container" align="center" style="background-color: #f9f2e3;">
 
-            <table style="width: 100%;">
+            <table style="width: 100%; margin-top: -15px;">
 
 
                 <tr style="background-color: #f9f2e3;">
                     <td>
-                        <div style="/*width:43%; height: 810px; float: left*/">
+                        <div>
                             <table>
                                 <tr>
                                     <td colspan="4">
                                         <img src="image/body_main.png" style="max-width: 100%">
-                                    </td>
-                                </tr>
-                               <tr>
-                                    <td colspan="4" style="/*background-image: url('image/body_main_bottom.png');*/ height: 47px;">
-                                        <img src="image/body_main_bottom.png" style="max-width: 100%">
-                                        <div id="go_action" style="width: 48px; height: 25px; float: right; margin-right: 15px; margin-bottom: 10px; cursor: pointer"></div>
-
                                     </td>
                                 </tr>
                                 <tr>
@@ -84,10 +109,10 @@
                                             <img src="image/function_block.png" style="max-width: 100%; ">
                                             <div style="width: 100%; height:100%; position:absolute; left: 0px; top: 0px;">
 
-                                                <div id="fn1" style="background-color: #3c763d; opacity:0.3; display: inline-block; width: 22%; height:100%; cursor: pointer; position: absolute; left: 12%;"></div>
-                                                <div id="fn2" style="background-color: #2b669a; opacity:0.3; display: inline-block; width: 22%; height:100%; cursor: pointer; position: absolute; left: 34%;"></div>
-                                                <div id="fn3" style="background-color: #3c763d; opacity:0.3; display: inline-block; width: 22%; height:100%; cursor: pointer; position: absolute; left: 56%;"></div>
-                                                <div id="fn4" style="background-color: #2b669a; opacity:0.3; display: inline-block; width: 22%; height:100%; cursor: pointer; position: absolute; left: 78%;"></div>
+                                                <div id="fn1" style="background-color: #3c763d; opacity:0.3; display: inline-block; width: 30%; height:85%; cursor: pointer; position: absolute; left: 0;"></div>
+                                                <div id="fn2" style="background-color: #2b669a; opacity:0.3; display: inline-block; width: 25%; height:85%; cursor: pointer; position: absolute; left: 30%;"></div>
+                                                <div id="fn3" style="background-color: #3c763d; opacity:0.3; display: inline-block; width: 25%; height:85%; cursor: pointer; position: absolute; left: 55%;"></div>
+                                                <div id="fn4" style="background-color: #2b669a; opacity:0.3; display: inline-block; width: 20%; height:85%; cursor: pointer; position: absolute; left: 80%;"></div>
                                             </div>
                                         </div>
                                     </td>>
@@ -95,23 +120,19 @@
                                 </tr>
 
                                 <tr>
-                                    <td colspan="4" style="background-image: url('image/body_function_bottom.png'); height:76px;">
-                                        <div id="go_notice" style="width: 160px; height: 25px; float: right; margin-right: 7px; margin-bottom: 21px; cursor: pointer"></div>
-                                        <!--<img src="image/body_function_bottom.png">-->
-
+                                    <td colspan="4" style="height:8vw; position: relative">
+                                        <img src="image/body_function_bottom.png" style="max-width: 100%; ">
+                                        <div id="go_notice" style="background-color: #f0ad4e; opacity:0.3; width: 14vw; height: 4vw; position:absolute; top: 1vw; right: 0; cursor: pointer"></div>
                                     </td>
                                 </tr>
 
                             </table>
                         </div>
-                        <!--<div style="width:50%; background-image: url('image/body_main_image.png')"></div>-->
-                        <!--<div style="width:57%; height: 712px; float: left; background-color: #f9f2e3;">
-                            <img src="image/body_main_image.png">
-                        </div>-->
+
                     </td>
                     <td style="width: 1vw;"></td>
                     <td style="text-align: center">
-                        <div style="/*width:57%; height: 810px; float: left;*/ background-color: #f9f2e3;">
+                        <div style=" background-color: #f9f2e3;">
                             <img src="image/body_main_image.png" style="max-width: 95%">
                         </div>
                     </td>
@@ -128,7 +149,7 @@
             <img src="image/close_btn.png" style="width:100%;">
         </div>
 
-        <div id="notice_frame" style="background-color: #FFFFFF; display: none; overflow-y: scroll; height: 70vh; width: 60vw;" align="center">
+        <div id="notice_frame" style="background-color: #f9f2e3; display: none; overflow-y: scroll; height: 70vh; width: 60vw; padding-top: 5vw; padding-bottom: 5vw;" align="center">
            <!--<a id="close_btn" href="#" style="display: block; float: right; width: 38px; height: 38px; background: url('image/close_btn.png') no-repeat center center; "></a>-->
 
             <div style="margin: 15px; max-width:820px; width: 95%;">
@@ -141,6 +162,10 @@
 </html>
 
 <script type="text/javascript">
+    if(isMobile.any()) {
+        location.href = "demo_mobile_b.html";
+    }
+
     $(document).ready(function() {
 
         $("#close_btn").css("display", "none");
@@ -165,13 +190,15 @@
             window.open(url, '_blank');
         });
 
+        var dlgElement = $('#notice_frame');
+
         $("#go_notice").click(function(e){
 
             var offset_left = ($(window).width()-$("#notice_frame").width())/2;
 
             // 跳box
             $.blockUI({
-                message: $('#notice_frame'),
+                message: dlgElement,
                 draggable: false,
                 overlayCSS:  {
                     cursor:          ''
