@@ -27,6 +27,9 @@
     @media only screen
     and (min-width : 768px)
     and (max-width : 1200px) {
+        #function_block{
+            top:2vw !important;
+        }
     }
 
     @media only screen
@@ -49,6 +52,10 @@
             width: 4vw !important;
             height: 3vw !important;
         }
+
+        #function_block{
+            top:1.5vw !important;
+        }
     }
 
     @media only screen
@@ -66,7 +73,7 @@
         top:0px;
         left:0px;
         background:rgb(50,50,50);
-        background:rgba(0,0,0,0.5);
+        background:rgba(0,0,0,0.6);
         display:none;
     }
 
@@ -86,43 +93,31 @@
 
 
 
-
-    /*////////////////////////*/
-
-    #notice_frame::-webkit-scrollbar-track {
-        background-image: url("image/scroll_bg.png");
-    }
-
-
-    #notice_frame::-webkit-scrollbar-thumb {
-        background-image: url("image/scroll_point.png");
-    }
-
-
 </style>
 
 <body style="background-color: #f9f2e3;">
 
-<div style="height:85px; width: 100%; background-color: #FFFFFF; position:relative; " align="center">
+<div style="height:6vw; width: 100%; background-color: #FFFFFF; position:relative; " align="center">
     <table class="container">
         <tr>
-            <td style="background-image: url('image/nav_logo.png'); background-repeat:no-repeat; width:75%; height:85px;">
-                <div id="go_official" style="width: 165px; height: 55px; float: left; margin-left: 15px; margin-bottom: 10px; cursor: pointer"></div>
+            <td style="width:75%; height:6vw; position: relative">
+                <img src="image/nav_logo.png" style="width:auto; max-height: 5.5vw">
+                <div id="go_official" style="width: 12vw; height: 5vw; position:absolute; bottom: 0.5vw; left: 1vw; cursor: pointer"></div>
             </td>
-            <td style="background-image: url('image/nav_service.png'); background-repeat:no-repeat; width:14%; height:85px;">
-                <div id="go_service" style="width: 90px; height: 35px; float: left; margin-left: 5px; margin-top: 25px; cursor: pointer"></div>
+            <td style="width:14%; height:6vw; position: relative">
+                <img src="image/nav_right.png" style="width:auto; max-height:5.5vw;">
+                <div id="go_service" style="width: 6vw; height: 3vw; position:absolute; bottom: 0.5vw; left: 0; display: inline-block; cursor: pointer"></div>
+                <div id="go_location" style=" width: 6vw; height: 3vw; position:absolute; bottom: 0.5vw; right: 2vw; display: inline-block; cursor: pointer"></div>
             </td>
-            <td style="background-image: url('image/nav_location.png'); background-repeat:no-repeat; width:13%; height:85px;">
-                <div id="go_location" style="width: 90px; height: 35px; float: left; margin-left: 5px; margin-top: 25px; cursor: pointer"></div>
-            </td>
+
         </tr>
     </table>
-    <div style="width:100%; height: 6px; background-color: #e72410; position:absolute; bottom: 0px;"></div>
 </div>
+<div style="width:100%; height: 6px; background-color: #e72410; position:relative; bottom: 0px;margin-top: 1px;"></div>
 
 <div class="container" align="center" style="background-color: #f9f2e3;">
 
-    <table style="width: 100%; margin-top: -15px;">
+    <table style="width: 100%; margin-top: -15px; margin-bottom: 5px;">
 
 
         <tr style="background-color: #f9f2e3;">
@@ -137,14 +132,14 @@
 
                         <tr>
                             <td>
-                                <div style="width: 100%; height: 11vw; position: relative">
+                                <div style="width: 100%; height: 9vw; position: relative">
                                     <img src="image/function_block.png" style="max-width: 100%; ">
-                                    <div style="width: 100%; height:100%; position:absolute; left: 0px; top: 0px;">
+                                    <div id="function_block" style="width: 100%; height:100%; position:absolute; left: 0px; top: 0px;">
 
-                                        <div id="fn1" style="display: inline-block; width: 30%; height:85%; cursor: pointer; position: absolute; left: 0;"></div>
-                                        <div id="fn2" style="display: inline-block; width: 25%; height:85%; cursor: pointer; position: absolute; left: 30%;"></div>
-                                        <div id="fn3" style="display: inline-block; width: 25%; height:85%; cursor: pointer; position: absolute; left: 55%;"></div>
-                                        <div id="fn4" style="display: inline-block; width: 20%; height:85%; cursor: pointer; position: absolute; left: 80%;"></div>
+                                        <div id="fn1" style=" display: inline-block; width: 30%; height:85%; cursor: pointer; position: absolute; left: 0;"></div>
+                                        <div id="fn2" style=" display: inline-block; width: 25%; height:85%; cursor: pointer; position: absolute; left: 30%;"></div>
+                                        <div id="fn3" style=" display: inline-block; width: 25%; height:85%; cursor: pointer; position: absolute; left: 55%;"></div>
+                                        <div id="fn4" style=" display: inline-block; width: 20%; height:85%; cursor: pointer; position: absolute; left: 80%;"></div>
                                     </div>
                                 </div>
                             </td>>
@@ -152,9 +147,9 @@
                         </tr>
 
                         <tr>
-                            <td colspan="4" style="height:8vw; position: relative">
-                                <img src="image/body_function_bottom.png" style="max-width: 100%; ">
-                                <div id="go_notice" style="width: 14vw; height: 4vw; position:absolute; top: 1vw; right: 0; cursor: pointer"></div>
+                            <td colspan="4" style="height:6vw; position: relative">
+                                <img src="image/body_function_bottom.png" style="max-width: 100%;">
+                                <div id="go_notice" style=" width: 14vw; height: 3vw; position:absolute; top: 2vw; right: 0; cursor: pointer"></div>
                             </td>
                         </tr>
 
