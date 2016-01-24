@@ -39,10 +39,11 @@
 			position: absolute;
 		}
 		.Scrollbar-Track {
-			width: 12px; height: 480px;
+			width: 12px; height: 455px;
 			position: absolute;
 			top: 36px; right: -35px;
 			background: transparent url(image/scroll_bg.png) no-repeat center center;
+			background-size: contain;
 			z-index: 1000;
 		}
 		.Scrollbar-Handle {
@@ -63,7 +64,7 @@
 		var scroller  = null;
 		var scrollbar = null;
 		window.onload = function () {
-			scroller  = new jsScroller(document.getElementById("Scroller-1"), 400, 200);
+			scroller  = new jsScroller(document.getElementById("Scroller-1"), 400, 400);
 			console.log(scroller);
 			scrollbar = new jsScrollbar (document.getElementById("Scrollbar-Container"), scroller, false);
 		}
