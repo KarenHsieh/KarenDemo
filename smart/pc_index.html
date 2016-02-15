@@ -1,0 +1,319 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+        <script type="text/javascript" src="js/detect_device.js"></script>
+        <script type="text/javascript" src="lightbox/jquery.lightbox_me.js"></script>
+    </head>
+
+    <style>
+        @media only screen
+        and (max-width : 768px) {
+            #log_img {
+                margin-top: 20px;
+            }
+            #special_1 {
+                width: 95% !important;
+                right: 5% !important;
+            }
+
+            #special_2 {
+                width: 95% !important;
+                right: 5% !important;
+            }
+
+            #go_official {
+                width:18vw !important;
+            }
+
+            #go_service {
+                width: 12vw !important;
+                right:54% !important;
+            }
+
+            #go_location {
+                width: 12vw !important;
+                right:5% !important;
+            }
+
+            #action_2 {
+                width:6% !important;
+                right: 38vw !important;
+                top: 10vw !important;
+            }
+
+            #action_3 {
+                width:6% !important;
+                right: 32vw !important;
+                top: 9vw !important;
+            }
+        }
+
+        @media only screen
+        and (min-width : 768px)
+        and (max-width : 1000px) {
+            #log_img {
+                margin-top: 10px;
+            }
+
+            #special_1 {
+                width: 85% !important;
+                right: 12% !important;
+            }
+
+            #special_2 {
+                width: 85% !important;
+                right: 10% !important;
+            }
+
+            #go_official {
+                width:18vw !important;
+            }
+
+            #go_service {
+                width: 12vw !important;
+                right:40.5% !important;
+            }
+
+            #go_location {
+                width: 10vw !important;
+            }
+
+            #action_2 {
+                width:6.5% !important;
+                right: 38vw !important;
+                top: 10vw !important;
+            }
+
+            #action_3 {
+                width:6.5% !important;
+                right: 32vw !important;
+                top: 9vw !important;
+            }
+        }
+
+        @media only screen
+        and (min-width : 1000px)
+        and (max-width : 1250px) {
+            #log_img {
+                margin-top: 10px;
+            }
+
+            #special_1 {
+                width: 77% !important;
+                right: 15% !important;
+            }
+
+            #special_2 {
+                width: 80% !important;
+                right: 12% !important;
+            }
+
+            #go_official {
+                width:16vw !important;
+            }
+
+            #go_service {
+                width: 9vw !important;
+                right:35% !important;
+            }
+
+            #go_location {
+                width: 9vw !important;
+            }
+
+            #action_2 {
+                width:6% !important;
+                right: 38vw !important;
+                top: 10vw !important;
+            }
+
+            #action_3 {
+                width:6% !important;
+                right: 32vw !important;
+                top: 9vw !important;
+            }
+        }
+
+        @media only screen
+        and (min-width : 1250px)
+        and (max-width : 1500px) {
+            #special_1 {
+                width: 65% !important;
+                right: 20% !important;
+            }
+
+            #special_2 {
+                width: 65% !important;
+                right: 20% !important;
+            }
+
+            #go_official {
+                width:14vw !important;
+            }
+
+            #go_service {
+                width: 8vw !important;
+                right:26% !important;
+            }
+
+            #go_location {
+                width: 8vw !important;
+            }
+
+            #action_2 {
+                width:6% !important;
+                right: 38vw !important;
+                top: 10vw !important;
+            }
+
+            #action_3 {
+                width:6% !important;
+                right: 32vw !important;
+                top: 9vw !important;
+            }
+        }
+
+        @media only screen
+        and (min-width : 1500px){
+
+            #action_2 {
+                width:6% !important;
+                right: 38vw !important;
+                top: 10vw !important;
+            }
+
+            #action_3 {
+                width:6% !important;
+                right: 32vw !important;
+                top: 9vw !important;
+            }
+
+        }
+
+        .clickable {
+            filter:alpha(opacity=0) !important;/*IE7*/
+            -moz-opacity: 0 !important;/*fireFox*/
+        }
+
+    </style>
+
+    <body>
+        <nav class="navbar" style="margin-bottom: -1px;">
+            <div class="container-fluid">
+                <div class="col-xs-8 col-sm-8 col-md-8" style="position: relative">
+                    <img id="log_img" src="images/pc_logo.png" class="navbar-left" style="max-width: 100%">
+                    <div id="go_official" class="clickable" style="background-color:#FFFFFF; opacity:0; width: 12vw; height: 5vw; position:absolute; bottom: 0.5vw; left: 1vw; cursor: pointer"></div>
+                </div>
+                <div class="col-xs-4 col-sm-4 col-md-4" style="position: relative">
+                    <img src="images/pc_nav.png" class="navbar-right" style="max-width: 100%">
+                    <div id="go_service" class="clickable" style="background-color:#FFFFFF; opacity:0; width: 6vw; height: 3vw; position:absolute; bottom: 0.5vw; right: 22%; display: inline-block; cursor: pointer"></div>
+                    <div id="go_location" class="clickable" style="background-color:#FFFFFF; opacity:0; width: 6vw; height: 3vw; position:absolute; bottom: 0.5vw; right: 0%; display: inline-block; cursor: pointer"></div>
+                </div>
+            </div>
+
+            <div class="container-fluid" style="padding-left: 0px; padding-right: 0px;">
+                <div style="width:100%; height: 6px; background-color: #e72410; position:relative; bottom: 0px;"></div>
+            </div>
+        </nav>
+
+
+        <div class="container-fluid" style="padding-left: 0px; padding-right: 0px;" align="center">
+
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <img src="images/pc_main.png" style="width: 95vw;">
+                <div id="action_2" class="clickable" style="background-color:#FFFFFF; opacity:0; position:absolute; width: 7%; height:21%; cursor: pointer; z-index: 10; bottom: 32%; right: 35%;"></div>
+                <div id="action_3" class="clickable" style="background-color:#FFFFFF; opacity:0; position:absolute; width: 7%; height:21%; cursor: pointer; z-index: 10; bottom: 37%; right: 26%;"></div>
+            </div>
+
+
+        </div>
+
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-12" align="center">
+                    <img src="images/pc_body.png" style="margin-top:20px; margin-bottom:30px; max-width: 95%;">
+                    <div class="get_special clickable" id="special_1" style="background-color:#FFFFFF; opacity:0; position:absolute; width: 58%; height:13%; cursor: pointer; z-index: 10; top: 29%; right:23%;"></div>
+                    <div class="get_special clickable" id="special_2" style="background-color:#FFFFFF; opacity:0; position:absolute; width: 58%; height:5%; cursor: pointer; z-index: 10; bottom: 24%; right:23%;"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container-fluid" id="footer" style="height:63px; width: 100%; background-color: #204482; line-height: 63px; text-align: center; cursor: pointer;" align="center">
+            <img src="images/pc_footer_text.png">
+        </div>
+
+        <div id="special" style="display: none; position: relative;">
+            <div id="close_btn" style="position:absolute; z-index:1111; max-width:38px; top: -10px; right: -10px;">
+                <img src="images/pc_close_btn.png" style="width:100%;">
+            </div>
+            <img src="images/pc_notice_m.png">
+        </div>
+    </body>
+</html>
+
+
+<script type="text/javascript">
+    if(isMobile.any()) {
+        location.href = "mobile_index.html";
+    }
+
+    $(document).ready(function() {
+        //$("#close_btn").css("display", "none");
+
+
+        $("#go_official").click(function(){
+            var url = "https://mma.sinopac.com/MemberPortal/Member/NextWebLogin.aspx";
+            window.open(url, '_blank');
+        });
+
+        $("#go_service").click(function(){
+            var url = "https://bank.sinopac.com/MMA8/bank/service/service-index.html";
+            window.open(url, '_blank');
+        });
+
+        $("#go_location").click(function(){
+            var url = "https://mma.sinopac.com/MMA7txt/CustomerService/BranchService/mma_branch.html";
+            window.open(url, '_blank');
+        });
+
+        $('.get_special').click(function(e) {
+
+            $('#special').lightbox_me({
+                centered: true
+            });
+            $("#close_btn").show();
+            e.preventDefault();
+        });
+
+        $("#close_btn").click(function(){
+            //$("#close_btn").hide();
+            $('#special').trigger('close');
+        });
+
+        $("#footer").click(function(){
+            var url = "https://mma.sinopac.com/MemberPortal/Member/NextWebLogin.aspx";
+            window.open(url, '_blank');
+        });
+
+        $("#action_2").click(function(){
+            var url = "https://mma.sinopac.com/MemberPortal/Member/MMALogin.aspx";
+            window.open(url, '_blank');
+        });
+
+        $("#action_3").click(function(){
+            var url = "https://mma.sinopac.com/MemberPortal/Member/MMALogin.aspx";
+            window.open(url, '_blank');
+        });
+    });
+</script>

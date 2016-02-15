@@ -1,0 +1,133 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+    <script type="text/javascript" src="js/detect_device.js"></script>
+    <script type="text/javascript" src="lightbox/jquery.lightbox_me.js"></script>
+</head>
+
+<style>
+    img, table {
+        max-width: 100%;
+    }
+
+</style>
+
+<body>
+
+<div style="width: 100%; height: 65px; background-color: #FFFFFF">
+    <div style="display: inline-table; width: 50%; line-height: 65px; text-align: center">
+        <a href="https://mma.sinopac.com/MemberPortal/Member/NextWebLogin.aspx" target="_blank">
+            <img src="images/mobile_logo.png" style="max-width: 100%; max-height: 65px;">
+        </a>
+    </div>
+
+    <div style="display: inline-table; width: 49%; line-height: 65px; text-align: center">
+        <img src="images/mobile_nav.png" style="max-width: 100%; max-height: 65px;">
+        <div style="width: 100%; height:40px; position: relative; bottom: 35px;">
+            <div id="go_service" style="background-color:#FFFFFF; opacity:0; display: inline-block; width: 50%; height:100%; float: left; cursor: pointer"></div>
+            <div id="go_location" style="background-color:#FFFFFF; opacity:0; display: inline-block; width: 50%; height:100%; float: right; cursor: pointer"></div>
+        </div>
+    </div>
+
+</div>
+
+<div style="width: 100%; height: 6px; background-color: #e72410"></div>
+
+<div style="width: 100%;" align="center">
+    <img src="images/mobile_main.png">
+    <div id="action_2" style="background-color:#FFFFFF; opacity:0; position:absolute; width: 24vw; height:33vw; cursor: pointer; z-index: 10; bottom: 36vh; right: 37vw;"></div>
+    <div id="action_3" style="background-color:#FFFFFF; opacity:0; position:absolute; width: 24vw; height:33vw; cursor: pointer; z-index: 10; bottom: 36vh; right: 7vw;"></div>
+</div>
+
+
+<div class="container-fluid" align="center">
+
+    <div class="row">
+        <div class="col-xs-12" align="center">
+            <img src="images/mobile_body.png" style="margin-top:20px; margin-bottom:30px; max-width: 95%;">
+            <div class="get_special" id="special_1" style="background-color:#FFFFFF; opacity:0; position:absolute; width: 90%; height:9%; cursor: pointer; z-index: 10; top: 32%; right:5%;"></div>
+            <div class="get_special" id="special_2" style="background-color:#FFFFFF; opacity:0; position:absolute; width: 90%; height:7%; cursor: pointer; z-index: 10; bottom: 22%; right:5%;"></div>
+        </div>
+    </div>
+
+</div>
+<div id="footer" style="height:63px; width: 100%; background-color: #204482; line-height: 63px; text-align: center; ">
+
+    <img src="images/mobile_footer_text.png" style="max-height: 60px;">
+</div>
+
+<div id="special" style="display: none; position: relative; width: 94%;">
+    <div id="close_btn" style="position:absolute; z-index:1111; max-width:38px; top: -8px; right: -8px;">
+        <img src="images/mobile_close_btn.png" style="width:100%;">
+    </div>
+    <img src="images/mobile_notice_m.png">
+</div>
+</body>
+</html>
+
+
+<script type="text/javascript">
+    if(!isMobile.any()) {
+        location.href = "pc_index.html";
+    }
+
+    $(document).ready(function() {
+        //$("#close_btn").css("display", "none");
+
+
+        $("#go_official").click(function(){
+            var url = "https://mma.sinopac.com/MemberPortal/Member/NextWebLogin.aspx";
+            window.open(url, '_blank');
+        });
+
+        $("#go_service").click(function(){
+            var url = "https://bank.sinopac.com/MMA8/bank/service/service-index.html";
+            window.open(url, '_blank');
+        });
+
+        $("#go_location").click(function(){
+            var url = "https://mma.sinopac.com/MMA7txt/CustomerService/BranchService/mma_branch.html";
+            window.open(url, '_blank');
+        });
+
+        $('.get_special').click(function(e) {
+
+            $('#special').lightbox_me({
+                centered: true
+            });
+            $("#close_btn").show();
+            e.preventDefault();
+        });
+
+        $("#close_btn").click(function(){
+            //$("#close_btn").hide();
+            $('#special').trigger('close');
+        });
+
+        $("#footer").click(function(){
+            var url = "https://mma.sinopac.com/MemberPortal/Member/NextWebLogin.aspx";
+            window.open(url, '_blank');
+        });
+
+        $("#action_2").click(function(){
+            var url = "https://mma.sinopac.com/MemberPortal/Member/MMALogin.aspx";
+            window.open(url, '_blank');
+        });
+
+        $("#action_3").click(function(){
+            var url = "https://mma.sinopac.com/MemberPortal/Member/MMALogin.aspx";
+            window.open(url, '_blank');
+        });
+    });
+</script>

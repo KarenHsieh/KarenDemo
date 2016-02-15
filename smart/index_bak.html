@@ -1,0 +1,244 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+        <script type="text/javascript" src="js/detect_device.js"></script>
+        <script type="text/javascript" src="lightbox/jquery.lightbox_me.js"></script>
+    </head>
+
+    <style>
+        /*@media only screen
+        and (max-width : 768px) {
+            #action_1 {
+                width:9% !important;
+                right: 42% !important;
+            }
+
+            #action_2 {
+                width:9% !important;
+                right: 30% !important;
+            }
+
+            #action_3 {
+                width:9% !important;
+                right: 18% !important;
+            }
+
+            #get_special {
+                width:9% !important;
+                right: 12% !important;
+            }
+        }
+
+        @media only screen
+        and (min-width : 768px)
+        and (max-width : 950px) {
+            #action_1 {
+                width:8% !important;
+                right: 42% !important;
+            }
+
+            #action_2 {
+                width:8% !important;
+                right: 30% !important;
+            }
+
+            #action_3 {
+                width:8% !important;
+                right: 18% !important;
+            }
+
+            #get_special {
+                width:9% !important;
+                right: 12% !important;
+            }
+        }
+
+        @media only screen
+        and (min-width : 950px)
+        and (max-width : 1100px) {
+            #action_1 {
+                width:7.5% !important;
+            }
+
+            #action_2 {
+                width:7.5% !important;
+                right: 31.5% !important;
+            }
+
+            #action_3 {
+                width:7.5% !important;
+                right: 21.5% !important;
+            }
+
+            #get_special {
+                width:9% !important;
+                right: 12% !important;
+            }
+        }
+
+        @media only screen
+        and (min-width : 1100px)
+        and (max-width : 1200px) {
+            #action_1 {
+
+            }
+
+            #action_2 {
+                width:6% ;
+                right: 33.5% !important;
+            }
+
+            #action_3 {
+                width:6% ;
+                right: 24.5% !important;
+            }
+
+            #get_special {
+                right: 17% !important;
+            }
+        }
+
+        @media only screen
+        and (min-width : 1200px)
+        and (max-width : 1300px) {
+            #get_special {
+                right: 19% !important;
+            }
+        }
+
+        @media only screen
+        and (min-width : 1300px)
+        and (max-width : 1500px) {
+            #action_1 {
+                width:6% !important;
+                right: 44% !important;
+            }
+
+            #action_2 {
+                width:6% !important;
+                right: 37% !important;
+            }
+
+            #action_3 {
+                width:6% !important;
+                right: 29% !important;
+            }
+
+            #get_special {
+                width:8% !important;
+                right:21% !important;
+            }
+        }*/
+
+        @media only screen
+        and (min-width : 1500px){
+            /*#action_1 {
+                width:6% !important;
+                right: 45% !important;
+            }
+
+            #action_2 {
+                width:6% !important;
+                right: 38% !important;
+            }
+
+            #action_3 {
+                width:6% !important;
+                right: 31% !important;
+            }
+
+            #get_special {
+
+            }*/
+        }
+
+    </style>
+
+    <body>
+        <nav class="navbar" style="margin-bottom: 0px;">
+            <div class="container-fluid">
+                <div class="col-xs-6 col-sm-8 col-md-8">
+                    <img src="images/pc_logo.png" class="navbar-left">
+                </div>
+                <div class="col-xs-6 col-sm-4 col-md-4">
+                    <img src="images/pc_nav.png" class="navbar-right">
+                </div>
+            </div>
+        </nav>
+
+        <div class="container-fluid" style="padding-left: 0px; padding-right: 0px;">
+            <div style="width:100%; height: 6px; background-color: #e72410; position:relative; bottom: 0px;margin-top: 1px;"></div>
+        </div>
+
+        <div class="container-fluid">
+            <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-12" style="background-image: url('images/pc_bg.png'); background-size: contain; background-repeat: no-repeat; background-position: center top; position: relative"" align="center">
+                        <img src="images/pc_title.png" style="margin-top:20px; margin-bottom:20px; max-width: 75vw;">
+                        <!--<div style="width: 100%; height:100%; position:absolute; left: 0px; top: 0px;">-->
+                            <div id="action_1" style="background-color:#f0ad4e; opacity:0.3; position:absolute; width: 7%; height:21%; cursor: pointer; z-index: 10; bottom: 27%; right: 43%;"></div>
+                            <div id="action_2" style="background-color:#f0ad4e; opacity:0.3; position:absolute; width: 7%; height:21%; cursor: pointer; z-index: 10; bottom: 32%; right: 35%;"></div>
+                            <div id="action_3" style="background-color:#f0ad4e; opacity:0.3; position:absolute; width: 7%; height:21%; cursor: pointer; z-index: 10; bottom: 37%; right: 26%;"></div>
+                        <!--</div>-->
+                    </div>
+            </div>
+        </div>
+
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-12" align="center">
+                    <img src="images/pc_body.png" style="margin-top:20px; margin-bottom:30px; max-width: 95%;">
+                    <div class="get_special" id="special_1" style="background-color:#f0ad4e; opacity:0.3; position:absolute; width: 55%; height:13%; cursor: pointer; z-index: 10; top: 29%; right:24%;"></div>
+                    <div class="get_special" id="special_2" style="background-color:#f0ad4e; opacity:0.3; position:absolute; width: 55%; height:5%; cursor: pointer; z-index: 10; bottom: 24%; right:24%;"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container-fluid" id="footer" style="height:63px; width: 100%; background-color: #204482; line-height: 63px; text-align: center; cursor: pointer;" align="center">
+            <img src="images/footer_text.png">
+        </div>
+
+        <div id="special" style="display: none; position: relative;">
+            <div id="close_btn" style="position:absolute; z-index:1111; max-width:38px; top: -10px; right: -10px;">
+                <img src="images/pc_close_btn.png" style="width:100%;">
+            </div>
+            <img src="images/pc_notice_m.png">
+        </div>
+    </body>
+</html>
+
+
+<script type="text/javascript">
+    if(isMobile.any()) {
+        //location.href = "demo_mobile_a.html";
+    }
+
+    $(document).ready(function() {
+        $('.get_special').click(function(e) {
+            $('#special').lightbox_me({
+                centered: true
+            });
+            e.preventDefault();
+        });
+
+        $("#close_btn").click(function(){
+            $("#close_btn").hide();
+            $('#special').trigger('close');
+        });
+
+        $("#footer").click(function(){
+            var url = "https://mma.sinopac.com/MemberPortal/Member/NextWebLogin.aspx";
+            window.open(url, '_blank');
+        });
+    });
+</script>
