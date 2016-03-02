@@ -24,8 +24,25 @@
 
 <link rel="stylesheet" href="timeglider/timeglider.datepicker.css" type="text/css" media="screen" charset="utf-8">
 
+	<script src="js/json2.js" type="text/javascript" charset="utf-8"></script>
 
-<style type='text/css'>
+	<script src="js/jquery-1.10.1.min.js" type="text/javascript" charset="utf-8"></script>
+	<!-- jquery-1.9.1.min.js  OR  jquery-1.10.1.min.js -->
+	<script src="js/jquery-ui-1.10.3.custom.min.js" type="text/javascript" charset="utf-8"></script>
+
+	<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/flick/jquery-ui.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+
+	<link rel="stylesheet" href="jquery-ui-timepicker-addon.css" type="text/css" media="screen" charset="utf-8">
+
+	<script src="jquery-ui-timepicker-addon.js" type="text/javascript" charset="utf-8"></script>
+	<script src="jquery-ui-sliderAccess.js" type="text/javascript" charset="utf-8"></script>
+
+
+
+
+
+	<style type='text/css'>
 
 
 		.header {
@@ -78,12 +95,17 @@
 
 	內容：<input type="text" id="content" placeholder="文字寫在這" style="margin-top: 15px;margin-bottom: 15px; height: 26px; width: 350px;"><br>
 
+	建立時間： <input id="datetimepicker1" type="text" style="position: relative; z-index: 9998; margin-top: 15px;margin-bottom: 15px; height: 26px; width: 200px;"/>
+
 	<p style="margin-bottom: 10px;">主角是：</p><br>
-	<input type="radio" name="who" value="taco" style="margin-bottom: 10px;">章魚<br>
+	<input type="radio" name="who" value="taco" style="margin-bottom: 10px;">尼奇<br>
 	<input type="radio" name="who" value="dog" style="margin-bottom: 10px;">狗<br>
-	<input type="radio" name="who" value="parrot" style="margin-bottom: 10px;">鸚鵡<br>
-	<input type="radio" name="who" value="asshole" style="margin-bottom: 10px;">垃圾鍋子<br>
-	<button type="button" id="record_btn" style="margin-top: 15px;margin-bottom: 15px; width: 150px; height: 30px;">新增紀錄</button>
+	<input type="radio" name="who" value="parrot" style="margin-bottom: 10px;">屎蒂芬泥<br>
+	<input type="radio" name="who" value="asshole" style="margin-bottom: 10px;">垃圾人<br>
+	<input type="radio" name="who" value="crab" style="margin-bottom: 10px;">死螃蟹<br>
+	<button type="button" id="record_btn" style="margin-top: 15px;margin-bottom: 15px; width: 150px; height: 30px;">新增紀錄</button><br><br>
+
+
 </div>
 
 
@@ -93,13 +115,6 @@
 <p></p>
 
 
-
-	<script src="js/json2.js" type="text/javascript" charset="utf-8"></script>
-	
-	<script src="js/jquery-1.10.1.min.js" type="text/javascript" charset="utf-8"></script>
-	<!-- jquery-1.9.1.min.js  OR  jquery-1.10.1.min.js -->
-	<script src="js/jquery-ui-1.10.3.custom.min.js" type="text/javascript" charset="utf-8"></script>
-	
 	
 	<script src="js/underscore-min.js" type="text/javascript" charset="utf-8"></script>
 	<script src="js/backbone-min.js" type="text/javascript" charset="utf-8"></script>
@@ -131,8 +146,7 @@
 	
 
   <script type='text/javascript'>
-  
-  
+
     var ico = window.ico;
     
 	window.pizzaShack = {
@@ -143,7 +157,35 @@
   
    var tg1 = window.tg1 = "";
    
-	$(function () { 
+	$(function () {
+
+		var opt = {
+			dateFormat: 'yy-mm-dd',
+			showSecond: true,
+			timeFormat: 'HH:mm:ss',
+
+			dayNames:["星期日","星期一","星期二","星期三","星期四","星期五","星期六"],
+			dayNamesMin:["日","一","二","三","四","五","六"],
+			monthNames:["一月","二月","三月","四月","五月","六月","七月","八月","九月","十月","十一月","十二月"],
+			monthNamesShort:["一月","二月","三月","四月","五月","六月","七月","八月","九月","十月","十一月","十二月"],
+			prevText:"上月",
+			nextText:"次月",
+			weekHeader:"週",
+			showMonthAfterYear:true,
+			//以下為時間選擇器部分
+			timeOnlyTitle:"選擇時分秒",
+			timeText:"時間",
+			hourText:"時",
+			minuteText:"分",
+			secondText:"秒",
+			millisecText:"毫秒",
+			timezoneText:"時區",
+			currentText:"現在時間",
+			closeText:"確定",
+			amNames:["上午","AM","A"],
+			pmNames:["下午","PM","P"]
+		};
+		$('#datetimepicker1').datetimepicker(opt);
 	
 		var tg_instance = {};
 
@@ -381,6 +423,7 @@
 		    //console.log("click record_btn");
 
             var content = $("#content").val();
+            var datetime = $("#datetimepicker1").val();
             var who = $('input[name="who"]:checked').val();
             //console.log("content = "+content);
             //console.log("who = "+who);
@@ -402,6 +445,10 @@
                 case 'asshole' :
                     icon = 'square_blue.png';
                     break;
+
+				case 'crab' :
+					icon = 'circle_green.png';
+					break;
             }
 
             $.ajax({
@@ -413,6 +460,7 @@
                 },
                 data: {
                     description: content,
+					datetime: datetime,
                     icon: icon,
                     action: "insert"
                 },

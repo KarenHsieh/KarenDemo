@@ -4,11 +4,11 @@
 
 $dbhost = 'localhost:3306';
 
-$dbuser = 'Karen';
-$dbpass = 'h94ru04u83';
+//$dbuser = 'Karen';
+//$dbpass = 'h94ru04u83';
 
-//$dbuser = 'root';
-//$dbpass = 'root';
+$dbuser = 'root';
+$dbpass = 'root';
 $dbname = 'timeliner_game';
 $conn = mysql_connect($dbhost, $dbuser, $dbpass) or die('Error with MySQL connection');
 mysql_query("SET NAMES 'utf8'");
@@ -19,7 +19,7 @@ $action = isset($_POST['action']) ? $_POST['action'] : '' ;
 $today = date("Y-m-d H:i");
 
 $legend[] = array(
-    "title" => '章魚',
+    "title" => '尼奇',
     "icon" => 'triangle_red.png'
 );
 $legend[] = array(
@@ -27,13 +27,18 @@ $legend[] = array(
     "icon" => 'triangle_green.png'
 );
 $legend[] = array(
-    "title" => '鸚鵡',
+    "title" => '屎蒂芬泥',
     "icon" => 'square_orange.png'
 );
 $legend[] = array(
-    "title" => '垃圾鍋子',
+    "title" => '垃圾人',
     "icon" => 'square_blue.png'
 );
+$legend[] = array(
+    "title" => '死螃蟹',
+    "icon" => 'circle_green.png'
+);
+
 
 
 
@@ -41,11 +46,12 @@ if($action == 'insert') {
 
     $description = isset($_POST['description']) ? $_POST['description'] : '' ;
     $icon = isset($_POST['icon']) ? $_POST['icon'] : '' ;
+    $datetime = isset($_POST['datetime']) ? $_POST['datetime'] : $today ;
 
 
     //$title = substr($description, 0, 20);
 
-    $sql = "INSERT INTO record SET title = '".$description."', description = '".$description."', icon = '".$icon."', date = NOW()";
+    $sql = "INSERT INTO record SET title = '".$description."', description = '".$description."', icon = '".$icon."', date = '".$datetime."'";
 
     $result = mysql_query($sql);
 
@@ -116,7 +122,7 @@ if($action == 'insert') {
         "id"=> "idahoTimeline",
         "title"=> "Office Bullshit Record",
         "focus_date"=> $today,
-        "initial_zoom"=> "10",
+        "initial_zoom"=> "7",
         "color"=> "#82530d",
         "size_importance"=> "true",
         "events" => $temp,
