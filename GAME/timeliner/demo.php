@@ -10,35 +10,20 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 
 
-<link rel="stylesheet" href="css/jquery-ui-1.10.3.custom.css" type="text/css" media="screen" title="no title" charset="utf-8">
 
-<link rel="stylesheet" href="timeglider/Timeglider.css" type="text/css" media="screen" title="no title" charset="utf-8">
+    <link rel="stylesheet" href="css/jquery-ui-1.10.3.custom.css" type="text/css" media="screen" title="no title" charset="utf-8">
 
-
-<!--<link rel="stylesheet" href="docs-style.css" type="text/css" media="screen" title="no title" charset="utf-8">-->
+    <link rel="stylesheet" href="timeglider/Timeglider.css" type="text/css" media="screen" title="no title" charset="utf-8">
 
 
-<!-- UNCOMMENT FOR CHECKBOX-STYLE LEGEND ITEMS
-<link rel="stylesheet" href="css/tg_legend_checkboxes.css" type="text/css" media="screen" charset="utf-8">-->
+    <link rel="stylesheet" href="css/docs.css" type="text/css" media="screen" title="no title" charset="utf-8">
 
 
-<link rel="stylesheet" href="timeglider/timeglider.datepicker.css" type="text/css" media="screen" charset="utf-8">
+    <!-- UNCOMMENT FOR CHECKBOX-STYLE LEGEND ITEMS
+    <link rel="stylesheet" href="css/tg_legend_checkboxes.css" type="text/css" media="screen" charset="utf-8">
+     -->
 
-	<script src="js/json2.js" type="text/javascript" charset="utf-8"></script>
-
-	<script src="js/jquery-1.10.1.min.js" type="text/javascript" charset="utf-8"></script>
-	<!-- jquery-1.9.1.min.js  OR  jquery-1.10.1.min.js -->
-	<script src="js/jquery-ui-1.10.3.custom.min.js" type="text/javascript" charset="utf-8"></script>
-
-	<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/flick/jquery-ui.css">
-	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
-
-	<link rel="stylesheet" href="jquery-ui-timepicker-addon.css" type="text/css" media="screen" charset="utf-8">
-
-	<script src="jquery-ui-timepicker-addon.js" type="text/javascript" charset="utf-8"></script>
-	<script src="jquery-ui-sliderAccess.js" type="text/javascript" charset="utf-8"></script>
-
-
+    <link rel="stylesheet" href="timeglider/timeglider.datepicker.css" type="text/css" media="screen" charset="utf-8">
 
 
 
@@ -95,12 +80,14 @@
 
 	內容：<input type="text" id="content" placeholder="文字寫在這" style="margin-top: 15px;margin-bottom: 15px; height: 26px; width: 350px;"><br>
 
-	建立時間： <input id="datetimepicker1" type="text" style="position: relative; z-index: 9998; margin-top: 15px;margin-bottom: 15px; height: 26px; width: 200px;"/>
+	建立時間： <input id="datetimepicker1" type="text" style="position: relative; z-index: 9998; margin-top: 15px;margin-bottom: 15px; height: 26px; width: 220px;"/>
+	&nbsp; &nbsp; &nbsp; &nbsp;
+	建立者： <input type="text" id="left_name" placeholder="不要留完話就跑啊！給我留下證據XD" style="margin-top: 15px;margin-bottom: 15px; height: 26px; width: 220px;"><br>
 
-	<p style="margin-bottom: 10px;">主角是：</p><br>
-	<input type="radio" name="who" value="taco" style="margin-bottom: 10px;">尼奇<br>
+	<p style="margin-bottom: 10px;">主角是...：</p><br>
+	<input type="radio" name="who" value="taco" style="margin-bottom: 10px;">太后<br>
 	<input type="radio" name="who" value="dog" style="margin-bottom: 10px;">狗<br>
-	<input type="radio" name="who" value="parrot" style="margin-bottom: 10px;">屎蒂芬泥<br>
+	<input type="radio" name="who" value="parrot" style="margin-bottom: 10px;">鸚鵡<br>
 	<input type="radio" name="who" value="asshole" style="margin-bottom: 10px;">垃圾人<br>
 	<input type="radio" name="who" value="crab" style="margin-bottom: 10px;">死螃蟹<br>
 	<button type="button" id="record_btn" style="margin-top: 15px;margin-bottom: 15px; width: 150px; height: 30px;">新增紀錄</button><br><br>
@@ -115,35 +102,51 @@
 <p></p>
 
 
-	
-	<script src="js/underscore-min.js" type="text/javascript" charset="utf-8"></script>
-	<script src="js/backbone-min.js" type="text/javascript" charset="utf-8"></script>
-	<script src="js/jquery.tmpl.js" type="text/javascript" charset="utf-8"></script>
-	<script src="js/ba-debug.min.js" type="text/javascript" charset="utf-8"></script>
-	<script src="js/ba-tinyPubSub.js" type="text/javascript" charset="utf-8"></script>
-	<script src="js/jquery.mousewheel.js" type="text/javascript" charset="utf-8"></script>
-	<script src="js/jquery.ui.ipad.js" type="text/javascript" charset="utf-8"></script>
-	<script src="js/globalize.js" type="text/javascript" charset="utf-8"></script>	
-	
-	
-	
-	<script src="timeglider/TG_Date.js" type="text/javascript" charset="utf-8"></script>
-	<script src="timeglider/TG_Org.js" type="text/javascript" charset="utf-8"></script>
-	<script src="timeglider/TG_Timeline.js" type="text/javascript" charset="utf-8"></script> 
-	<script src="timeglider/TG_TimelineView.js" type="text/javascript" charset="utf-8"></script>
-	<script src="timeglider/TG_Mediator.js" type="text/javascript" charset="utf-8"></script> 
-	<script src="timeglider/timeglider.timeline.widget.js" type="text/javascript"></script>
-	
-	<script src="timeglider/timeglider.datepicker.js" type="text/javascript"></script>
+<script src="js/json2.js" type="text/javascript" charset="utf-8"></script>
 
-	
-	<script src="js/jquery.jscrollpane.min.js" type="text/javascript"></script>
+<script src="js/jquery-1.10.1.min.js" type="text/javascript" charset="utf-8"></script>
+<!-- jquery-1.9.1.min.js  OR  jquery-1.10.1.min.js -->
+<script src="js/jquery-ui-1.10.3.custom.min.js" type="text/javascript" charset="utf-8"></script>
 
-	
-	<!-- JUST FOR KITCHEN SINK: NOT NEEDED FOR TG WIDGET -->
-	<script src="js/jquery.ui.sortable.js" type="text/javascript" charset="utf-8"></script>
-	
-	
+
+<script src="js/underscore-min.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/backbone-min.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/jquery.tmpl.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/ba-debug.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/ba-tinyPubSub.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/jquery.mousewheel.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/jquery.ui.ipad.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/globalize.js" type="text/javascript" charset="utf-8"></script>
+
+
+
+<script src="timeglider/TG_Date.js" type="text/javascript" charset="utf-8"></script>
+<script src="timeglider/TG_Org.js" type="text/javascript" charset="utf-8"></script>
+<script src="timeglider/TG_Timeline.js" type="text/javascript" charset="utf-8"></script>
+<script src="timeglider/TG_TimelineView.js" type="text/javascript" charset="utf-8"></script>
+<script src="timeglider/TG_Mediator.js" type="text/javascript" charset="utf-8"></script>
+<script src="timeglider/timeglider.timeline.widget.js" type="text/javascript"></script>
+
+<script src="timeglider/timeglider.datepicker.js" type="text/javascript"></script>
+
+
+<script src="js/jquery.jscrollpane.min.js" type="text/javascript"></script>
+
+
+<!-- JUST FOR KITCHEN SINK: NOT NEEDED FOR TG WIDGET -->
+<script src="js/jquery.ui.sortable.js" type="text/javascript" charset="utf-8"></script>
+
+
+<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/flick/jquery-ui.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+
+<link rel="stylesheet" href="jquery-ui-timepicker-addon.css" type="text/css" media="screen" charset="utf-8">
+<link rel="stylesheet" href="css/alertify.core.css" type="text/css" media="screen" charset="utf-8">
+<link rel="stylesheet" href="css/alertify.bootstrap.css" type="text/css" media="screen" charset="utf-8">
+<script src="jquery-ui-timepicker-addon.js" type="text/javascript" charset="utf-8"></script>
+<script src="jquery-ui-sliderAccess.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/alertify.js" type="text/javascript" charset="utf-8"></script>
+
 
   <script type='text/javascript'>
 
@@ -156,36 +159,10 @@
 	};
   
    var tg1 = window.tg1 = "";
+
+
    
 	$(function () {
-
-		var opt = {
-			dateFormat: 'yy-mm-dd',
-			showSecond: true,
-			timeFormat: 'HH:mm:ss',
-
-			dayNames:["星期日","星期一","星期二","星期三","星期四","星期五","星期六"],
-			dayNamesMin:["日","一","二","三","四","五","六"],
-			monthNames:["一月","二月","三月","四月","五月","六月","七月","八月","九月","十月","十一月","十二月"],
-			monthNamesShort:["一月","二月","三月","四月","五月","六月","七月","八月","九月","十月","十一月","十二月"],
-			prevText:"上月",
-			nextText:"次月",
-			weekHeader:"週",
-			showMonthAfterYear:true,
-			//以下為時間選擇器部分
-			timeOnlyTitle:"選擇時分秒",
-			timeText:"時間",
-			hourText:"時",
-			minuteText:"分",
-			secondText:"秒",
-			millisecText:"毫秒",
-			timezoneText:"時區",
-			currentText:"現在時間",
-			closeText:"確定",
-			amNames:["上午","AM","A"],
-			pmNames:["下午","PM","P"]
-		};
-		$('#datetimepicker1').datetimepicker(opt);
 	
 		var tg_instance = {};
 
@@ -214,7 +191,7 @@
                 console.log("thrownError : " + thrownError);
             },
             success: function(response) {
-                console.log(response);
+                console.log("update_record = "+response);
                 //$("body").append(response);
 
 
@@ -366,6 +343,34 @@
 			}
 		}
 
+		var opt = {
+			dateFormat: 'yy-mm-dd',
+			showSecond: true,
+			timeFormat: 'HH:mm:ss',
+
+			dayNames:["星期日","星期一","星期二","星期三","星期四","星期五","星期六"],
+			dayNamesMin:["日","一","二","三","四","五","六"],
+			monthNames:["一月","二月","三月","四月","五月","六月","七月","八月","九月","十月","十一月","十二月"],
+			monthNamesShort:["一月","二月","三月","四月","五月","六月","七月","八月","九月","十月","十一月","十二月"],
+			prevText:"上月",
+			nextText:"次月",
+			weekHeader:"週",
+			showMonthAfterYear:true,
+			//以下為時間選擇器部分
+			timeOnlyTitle:"選擇時分秒",
+			timeText:"時間",
+			hourText:"時",
+			minuteText:"分",
+			secondText:"秒",
+			millisecText:"毫秒",
+			timezoneText:"時區",
+			currentText:"現在時間",
+			closeText:"確定",
+			amNames:["上午","AM","A"],
+			pmNames:["下午","PM","P"]
+		};
+		$('#datetimepicker1').datetimepicker(opt);
+
 
 	
 		
@@ -424,30 +429,50 @@
 
             var content = $("#content").val();
             var datetime = $("#datetimepicker1").val();
+            console.log("datetime = "+datetime);
+            var left_name = $("#left_name").val();
             var who = $('input[name="who"]:checked').val();
-            //console.log("content = "+content);
-            //console.log("who = "+who);
+            console.log("who = "+who);
+
+            if(content == '') {
+                alertify.error("給我說點什麼啊！！！");
+                return;
+            } else if (datetime == '' || datetime == undefined) {
+                alertify.error("案發時間咧！");
+                return;
+            } else if (left_name == ''|| left_name == undefined) {
+                left_name = "匿名者";
+            } else if (who == '' || who == undefined) {
+                alertify.error("故事沒主角怎麼行！");
+                return;
+            }
 
             var icon = '';
+            var name = '';
             switch (who) {
                 case 'taco' :
                     icon = 'triangle_red.png';
+                    name = '太后';
                     break;
 
                 case 'dog' :
                     icon = 'triangle_green.png';
+                    name = '忠心護主狗';
                     break;
 
                 case 'parrot' :
                     icon = 'square_orange.png';
+                    name = '鸚鵡';
                     break;
 
                 case 'asshole' :
                     icon = 'square_blue.png';
+                    name = '垃圾人';
                     break;
 
 				case 'crab' :
 					icon = 'circle_green.png';
+                    name = '死螃蟹';
 					break;
             }
 
@@ -462,6 +487,8 @@
                     description: content,
 					datetime: datetime,
                     icon: icon,
+                    left_name: left_name,
+                    name: name,
                     action: "insert"
                 },
                 complete:function(){
@@ -472,7 +499,7 @@
                     console.log("thrownError : " + thrownError);
                 },
                 success: function(response) {
-                    console.log(response);
+                    console.log("insert = "+response);
                     //$("body").append(response);
                     location.reload();
 
