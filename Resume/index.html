@@ -179,25 +179,37 @@
 						<h5>SKILLS</h5>
 					</div>
 					<div class="col-lg-3 centered">
-						<canvas id="javascript" height="130" width="130"></canvas>
-						<p>Javascript</p>
+						<canvas id="first_job" height="200" width="200"></canvas>
+						<p>First Job</p>
 						<br>
 						<script>
 							var doughnutData = [
-									{
-										value: 70,
-										color:"#1abc9c"
-									},
-									{
-										value : 30,
-										color : "#ecf0f1"
-									}
-								];
-								var myDoughnut = new Chart(document.getElementById("javascript").getContext("2d")).Doughnut(doughnutData);
+								{
+									value: 80,
+									color:"#1abc9c",
+									label: "PHP+MySQL"
+								},
+								{
+									value: 20,
+									color: "#ecf0f1",
+									label: "HTML+CSS"
+								}
+							];
+								//var myDoughnut = new Chart(document.getElementById("javascript").getContext("2d")).Doughnut(doughnutData);
+
+							var ctx = document.getElementById("first_job").getContext("2d");
+							var myNewChart = new Chart(ctx).Doughnut(doughnutData,{
+								responsive: true,
+								showTooltips: true,
+								tooltipEvents: ["mousemove", "touchstart", "touchmove"],
+								multiTooltipTemplate: "<%= value %>"
+							});
+
+
 						</script>
 					</div>
 					<div class="col-lg-3 centered">
-						<canvas id="bootstrap" height="130" width="130"></canvas>
+						<!--<canvas id="bootstrap" height="130" width="130"></canvas>
 						<p>Bootstrap</p>
 						<br>
 						<script>
@@ -212,10 +224,10 @@
 									}
 								];
 								var myDoughnut = new Chart(document.getElementById("bootstrap").getContext("2d")).Doughnut(doughnutData);
-						</script>
+						</script>-->
 					</div>
 					<div class="col-lg-3 centered">
-						<canvas id="wordpress" height="130" width="130"></canvas>
+						<!--<canvas id="wordpress" height="130" width="130"></canvas>
 						<p>Wordpress</p>
 						<br>
 						<script>
@@ -230,29 +242,40 @@
 									}
 								];
 								var myDoughnut = new Chart(document.getElementById("wordpress").getContext("2d")).Doughnut(doughnutData);
-						</script>
+						</script>-->
 					</div>
 					
 					<div class="col-lg-3 col-lg-offset-3 centered">
-						<canvas id="html" height="130" width="130"></canvas>
-						<p>HTML/CSS</p>
+						<canvas id="second_job" height="200" width="200"></canvas>
+						<p>Second Job</p>
 						<br>
 						<script>
-							var doughnutData = [
-									{
-										value: 80,
-										color:"#1abc9c"
-									},
-									{
-										value : 20,
-										color : "#ecf0f1"
-									}
-								];
-								var myDoughnut = new Chart(document.getElementById("html").getContext("2d")).Doughnut(doughnutData);
+							var doughnutData2 = [
+								{
+									value: 30,
+									color:"#1abc9c",
+									label: "PHP+MySQL"
+								},
+								{
+									value: 70,
+									color: "#ecf0f1",
+									label: "HTML+CSS"
+								}
+							];
+							//var myDoughnut = new Chart(document.getElementById("javascript").getContext("2d")).Doughnut(doughnutData);
+
+							var ctx2 = document.getElementById("second_job").getContext("2d");
+							var myNewChart2 = new Chart(ctx2).Doughnut(doughnutData2,{
+								responsive: true,
+								showTooltips: true,
+								tooltipEvents: ["mousemove", "touchstart", "touchmove"],
+								multiTooltipTemplate: "<%= value %>",
+								animateRotate: false
+							});
 						</script>
 					</div>
 					<div class="col-lg-3 centered">
-						<canvas id="photoshop" height="130" width="130"></canvas>
+						<!--<canvas id="photoshop" height="130" width="130"></canvas>
 						<p>Photoshop</p>
 						<br>
 						<script>
@@ -267,10 +290,10 @@
 									}
 								];
 								var myDoughnut = new Chart(document.getElementById("photoshop").getContext("2d")).Doughnut(doughnutData);
-						</script>
+						</script>-->
 					</div>
 					<div class="col-lg-3 centered">
-						<canvas id="illustrator" height="130" width="130"></canvas>
+						<!--<canvas id="illustrator" height="130" width="130"></canvas>
 						<p>Illustrator</p>
 						<br>
 						<script>
@@ -285,7 +308,7 @@
 									}
 								];
 								var myDoughnut = new Chart(document.getElementById("illustrator").getContext("2d")).Doughnut(doughnutData);
-						</script>
+						</script>-->
 					</div>
 
 			</div><!--/.row -->
@@ -345,7 +368,7 @@
 					<p><img class="img-responsive" src="assets/img/port03.jpg" alt=""></p>
 				</div>
 				<div class="col-lg-5">
-					<p>開運錢母</p>
+					<p>開運錢母</p> <!--https://bank.sinopac.com/bsp/web15/fund_money/demo_pc_a.html-->
 					<p>
 						<more>
 							永豐銀行開運錢母活動頁面。<br/><br/>
@@ -358,7 +381,7 @@
 					<p><img class="img-responsive" src="assets/img/port03.jpg" alt=""></p>
 				</div>
 				<div class="col-lg-5">
-					<p>智多星</p>
+					<p>智多星</p> <!--https://mma.sinopac.com/MMA8/mma/html/event/wealth/201509/pc_index.html-->
 					<p>
 						<more>
 							永豐銀行智多星活動頁面。<br/><br/>
