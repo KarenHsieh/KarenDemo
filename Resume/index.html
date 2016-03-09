@@ -7,7 +7,7 @@
     <meta name="author" content="">
     <link rel="shortcut icon" href="assets/ico/favicon.png">
 
-    <title>Kelvin - Bootstrap 3 Resume Theme</title>
+    <title>Karen's Introduction</title>
 
     <!-- Bootstrap core CSS -->
     <link href="assets/css/bootstrap.css" rel="stylesheet">
@@ -24,11 +24,30 @@
     <script type="text/javascript" src="assets/js/smoothscroll.js"></script> 
     <script src="assets/js/Chart.js"></script>
 
-    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+
+	  <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
       <script src="assets/js/html5shiv.js"></script>
       <script src="assets/js/respond.min.js"></script>
     <![endif]-->
+
+	  <script src="print/jquery.printPage.js"></script>
+
+    <style>
+		.icon-link:hover {
+			color: #2c3e50 !important;
+		}
+
+		@media screen and (max-device-width: 650px) {
+			.custom_desc {
+				text-align: center !important;
+			}
+		}
+
+
+
+		custom_desc
+	</style>
   </head>
 
   <body data-spy="scroll" data-offset="0" data-target="#nav">
@@ -58,8 +77,8 @@
 		<div class="container">
 			<div class="row centered">
 				<div class="col-lg-12">
-					<h1>William T. Kelvin</h1>
-					<h3>Web Designer | kelvin@blacktie.co</h3>
+					<h1>Karen Hsieh </h1>
+					<h3>Web Developer | mooshi21824@gmail.com</h3>
 				</div><!--/.col-lg-12 -->
 			</div><!--/.row -->
 		</div><!--/.container -->
@@ -75,10 +94,17 @@
 					<h5>ABOUT</h5>
 				</div>
 				<div class="col-lg-6">
-					<p>I'm web designer & front-end developer with 7 years of professional experience. I'm interested in all kinds of visual communication, but my major focus is on designing web, mobile & tablet interfaces. I also have skills in other fields like branding, icon design or web development.</p>
+					<p>
+					我是一位網站程式設計師。<br>
+					現階段專注於前端的開發，也曾接擔任PHP程式設計師。<br>
+					進入網站程式設計的領域約有四年時間<br>
+					使用的技術為HTML/CSS/jQuery/PHP/MySQL<br>
+					程式撰寫上常使用Bootstrap、jQuery UI及jQuery Plugin協助開發。<br>
+					近期專注在提升RWD的網頁開發設計，以及學習javascript開發。<br>
+					</p>
 				</div>
 				<div class="col-lg-3">
-					<p><a href="#"><i class="icon-file"></i></a> <sm>DOWNLOAD PDF</sm></p>
+					<p class="btnPrint"><a href="#"><i class="icon-file"></i></a> <sm>PRINT & DOWNLOAD</sm></p>
 				</div>
 				
 			</div><!--/.row -->
@@ -105,16 +131,7 @@
 					<!--<imp><sm>畢業</sm></imp>-->
 					</p>
 				</div>
-	
-				<!--<div class="col-lg-6 col-lg-offset-3">
-					<p><t>Degree of Web Developer</t><br/>
-						Hastings University <br/>
-						<i>2 Years Course</i>
-					</p>
-				</div>
-				<div class="col-lg-3">
-					<p><sm>JUNE 2012</sm></p>
-				</div>-->
+
 	
 		</div><!--/.row -->
 		<br>
@@ -138,7 +155,7 @@
 							1. 建置專案客製功能 <br>
 							2. 開發現有產品新功能 <br>
 							3. 優化現有產品畫面呈現及操作流程 <br>
-							4. 建置公司產品所需報表及功能 <br>
+							4. 建置公司產品所需報表及內部系統功能 <br>
 						</more>
 					</p>
 				</div>
@@ -166,7 +183,7 @@
 				</div>
 		</div><!--/.row -->
 		<br>
-		<hr>
+		<!--<hr>-->
 	</div><!--/.container -->
 
 	
@@ -180,26 +197,33 @@
 					</div>
 					<div class="col-lg-3 centered">
 						<canvas id="first_job" height="200" width="200"></canvas>
-						<p>First Job</p>
+						<p>生活磚資訊</p>
+						<div class="desc custom_desc" style="text-align: left; word-break:break-all;">
+                            <more>
+                                主要負責網站前端客製功能開發，多半使用Bootstrap Ｇrid開發RWD網頁。
+                                專案客製功能會尋找合適的jQuery UI或是jQuery Plugin搭配ajax與PHP進行開發。<br><br>
+                                <sm>工作上技術使用的時間比例約為：<br>HTML+CSS/jQuery 佔 65%<br>PHP/MySQL佔35% (工作經歷約一年)</sm><br>
+                            </more>
+                        </div>
 						<br>
 						<script>
 							var doughnutData = [
-								{
-									value: 80,
-									color:"#1abc9c",
-									label: "PHP+MySQL"
-								},
-								{
-									value: 20,
-									color: "#ecf0f1",
-									label: "HTML+CSS"
-								}
+                                {
+                                    value: 60,
+                                    color:"#1abc9c",
+                                    label: "HTML+CSS/jQuery"
+                                },
+                                {
+                                    value: 40,
+                                    color: "#ecf0f1",
+                                    label: "PHP/MySQL"
+                                }
 							];
 								//var myDoughnut = new Chart(document.getElementById("javascript").getContext("2d")).Doughnut(doughnutData);
 
 							var ctx = document.getElementById("first_job").getContext("2d");
 							var myNewChart = new Chart(ctx).Doughnut(doughnutData,{
-								responsive: true,
+								//responsive: true,
 								showTooltips: true,
 								tooltipEvents: ["mousemove", "touchstart", "touchmove"],
 								multiTooltipTemplate: "<%= value %>"
@@ -208,108 +232,51 @@
 
 						</script>
 					</div>
-					<div class="col-lg-3 centered">
-						<!--<canvas id="bootstrap" height="130" width="130"></canvas>
-						<p>Bootstrap</p>
-						<br>
-						<script>
-							var doughnutData = [
-									{
-										value: 90,
-										color:"#1abc9c"
-									},
-									{
-										value : 10,
-										color : "#ecf0f1"
-									}
-								];
-								var myDoughnut = new Chart(document.getElementById("bootstrap").getContext("2d")).Doughnut(doughnutData);
-						</script>-->
-					</div>
-					<div class="col-lg-3 centered">
-						<!--<canvas id="wordpress" height="130" width="130"></canvas>
-						<p>Wordpress</p>
-						<br>
-						<script>
-							var doughnutData = [
-									{
-										value: 65,
-										color:"#1abc9c"
-									},
-									{
-										value : 35,
-										color : "#ecf0f1"
-									}
-								];
-								var myDoughnut = new Chart(document.getElementById("wordpress").getContext("2d")).Doughnut(doughnutData);
-						</script>-->
-					</div>
+					<div class="col-lg-3 centered"></div>
+					<div class="col-lg-3 centered"></div>
 					
 					<div class="col-lg-3 col-lg-offset-3 centered">
 						<canvas id="second_job" height="200" width="200"></canvas>
-						<p>Second Job</p>
+						<p>晶英國際</p>
+                        <div class="desc custom_desc" style="text-align: left; word-break:break-all;">
+                            <more>
+                                主要的工作是依照各部門user需求修改opencart後台的各項功能，並建立額外的工具提供商品上下架和交換資料等操作。
+                                因此較多的機會接觸PHP及MySQL，其他工作多為Amazon、eBay銷售平台操作及維護。<br><br>
+                                <sm>工作上技術使用的時間比例約為：<br>HTML+CSS/jQuery 佔 65%<br>PHP/MySQL佔35% (工作經歷約兩年十個月)</sm><br>
+                            </more>
+                        </div>
 						<br>
 						<script>
 							var doughnutData2 = [
-								{
-									value: 30,
-									color:"#1abc9c",
-									label: "PHP+MySQL"
-								},
-								{
-									value: 70,
-									color: "#ecf0f1",
-									label: "HTML+CSS"
-								}
+                                {
+                                    value: 50,
+                                    color:"#1abc9c",
+                                    label: "PHP/MySQL"
+                                },
+                                {
+                                    value: 20,
+                                    color: "#62eace",
+                                    label: "HTML+CSS/jQuery"
+                                },
+                                {
+                                    value: 30,
+                                    color: "#ecf0f1",
+                                    label: "其他"
+                                }
 							];
 							//var myDoughnut = new Chart(document.getElementById("javascript").getContext("2d")).Doughnut(doughnutData);
 
 							var ctx2 = document.getElementById("second_job").getContext("2d");
 							var myNewChart2 = new Chart(ctx2).Doughnut(doughnutData2,{
-								responsive: true,
+								//responsive: true,
 								showTooltips: true,
 								tooltipEvents: ["mousemove", "touchstart", "touchmove"],
-								multiTooltipTemplate: "<%= value %>",
-								animateRotate: false
+								multiTooltipTemplate: "<%= value %>"
 							});
 						</script>
 					</div>
-					<div class="col-lg-3 centered">
-						<!--<canvas id="photoshop" height="130" width="130"></canvas>
-						<p>Photoshop</p>
-						<br>
-						<script>
-							var doughnutData = [
-									{
-										value: 70,
-										color:"#1abc9c"
-									},
-									{
-										value : 30,
-										color : "#ecf0f1"
-									}
-								];
-								var myDoughnut = new Chart(document.getElementById("photoshop").getContext("2d")).Doughnut(doughnutData);
-						</script>-->
-					</div>
-					<div class="col-lg-3 centered">
-						<!--<canvas id="illustrator" height="130" width="130"></canvas>
-						<p>Illustrator</p>
-						<br>
-						<script>
-							var doughnutData = [
-									{
-										value: 50,
-										color:"#1abc9c"
-									},
-									{
-										value : 50,
-										color : "#ecf0f1"
-									}
-								];
-								var myDoughnut = new Chart(document.getElementById("illustrator").getContext("2d")).Doughnut(doughnutData);
-						</script>-->
-					</div>
+					<div class="col-lg-3 centered"></div>
+					<div class="col-lg-3 centered"></div>
 
 			</div><!--/.row -->
 			<br>
@@ -326,10 +293,10 @@
 					<h5>PORTFOLIO</h5>
 				</div>
 				<div class="col-lg-4">
-					<p><img class="img-responsive" src="assets/img/port01.jpg" alt=""></p>
+					<p><img class="img-responsive" src="assets/img/work/button_2.png" alt=""></p>
 				</div>
 				<div class="col-lg-5">
-					<p>鈕扣 Online 拼貼</p>
+					<p>倍騰鈕扣2D穿搭  &nbsp; <i class="icon-link" style="color: #1abc9c" onclick="window.open('http://www.e-button.com.tw/indexplates/2DUI/set_bg.php?id=buttonintl&lan=TW')"></i>&nbsp<sm>(只支援PC操作)</sm></p>
 					<p>
 					<more>
 						客戶在網站挑選鈕扣樣式線上搭配預覽及分享。<br/>
@@ -338,37 +305,38 @@
 					</more>
 				</p>
 				</div>
-	
+
 				<div class="col-lg-4 col-lg-offset-3">
-					<p><img class="img-responsive" src="assets/img/port02.jpg" alt=""></p>
+					<p><img class="img-responsive" src="assets/img/work/boscogen_front_1_cut.png" alt=""></p>
 				</div>
 				<div class="col-lg-5">
-					<p>團購網站及問卷</p>
+					<p>百仕可團購網站及問卷 &nbsp; <i class="icon-link" style="color: #1abc9c" onclick="window.open('http://event.boscogen.com.tw/pc_index.php')"></i></p>
 					<p>
 					<more>團購頁面呈現的文字及圖片可以透過後台編輯，按下立即團購後，會先進入基本資料填寫頁面，其後接著提供問卷的填寫，每次下一頁時會去驗證問卷是否填寫及是否必填。跳離網頁時，會顯示表單詢問離開團購的理由。<br/><br/>
 						<sm><i class="icon-tag"></i> 公司專案</sm>
 					</more>
 					</p>
 				</div>
-				
+
 				<div class="col-lg-4 col-lg-offset-3">
-					<p><img class="img-responsive" src="assets/img/port03.jpg" alt=""></p>
+					<p><img class="img-responsive" src="assets/img/work/ciyou_1_cut.png" alt=""></p>
 				</div>
 				<div class="col-lg-5">
 					<p>慈祐宮線上點燈填寫系統</p>
 					<p>
 						<more>
-						提供慈祐宮信眾線上點燈，可以挑選想要點的燈建立訂單，透過永豐銀行信用卡付款或轉帳完成交易。<br/><br/>
+						提供慈祐宮信眾線上點燈，可以挑選想要點的燈建立訂單，透過永豐銀行信用卡付款或轉帳完成交易。<br/>
+						<sm>（目前此網頁鑲嵌在永豐銀行fun錢包APP內。）</sm><br/><br/>
 						<sm><i class="icon-tag"></i> 公司專案</sm>
 						</more>
 					</p>
 				</div>
 
 				<div class="col-lg-4 col-lg-offset-3">
-					<p><img class="img-responsive" src="assets/img/port03.jpg" alt=""></p>
+					<p><img class="img-responsive" src="assets/img/work/fund_money.png" alt=""></p>
 				</div>
 				<div class="col-lg-5">
-					<p>開運錢母</p> <!--https://bank.sinopac.com/bsp/web15/fund_money/demo_pc_a.html-->
+					<p>開運錢母 &nbsp; <i class="icon-link" style="color: #1abc9c" onclick="window.open('https://bank.sinopac.com/bsp/web15/fund_money/demo_pc_a.html')"></i> </p>
 					<p>
 						<more>
 							永豐銀行開運錢母活動頁面。<br/><br/>
@@ -378,10 +346,10 @@
 				</div>
 
 				<div class="col-lg-4 col-lg-offset-3">
-					<p><img class="img-responsive" src="assets/img/port03.jpg" alt=""></p>
+					<p><img class="img-responsive" src="assets/img/work/smart.png" alt=""></p>
 				</div>
 				<div class="col-lg-5">
-					<p>智多星</p> <!--https://mma.sinopac.com/MMA8/mma/html/event/wealth/201509/pc_index.html-->
+					<p>智多星 &nbsp; <i class="icon-link" style="color: #1abc9c" onclick="window.open('https://mma.sinopac.com/MMA8/mma/html/event/wealth/201509/pc_index.html')"></i> </p>
 					<p>
 						<more>
 							永豐銀行智多星活動頁面。<br/><br/>
@@ -406,7 +374,7 @@
 				<div class="col-lg-2 col-lg-offset-1">
 					<h5>CONTACT</h5>
 				</div>
-				<div class="col-lg-6">
+				<div class="col-lg-3">
 					<p><t>Email</t><br/>
 						mooshi21824@gmail.com <br/>
 					</p>
@@ -415,21 +383,21 @@
 						Postal 23892 <br/>
 						London, England. <br/>
 					</p>-->
+
+				</div>
+				<div class="col-lg-3">
 					<p><t>Phone</t><br/>
 						0911919398 <br/>
 					</p>
 				</div>
 				<div class="col-lg-3">
-					<p><sm>SOCIAL LINKS</sm></p>
+					<!--<p><sm>SOCIAL LINKS</sm></p>
 					<p>
-						<!--<a href="#"><i class="icon-dribbble"></i></a>
-						<a href="#"><i class="icon-twitter"></i></a>
-						<a href="#"><i class="icon-facebook"></i></a>-->
-						<a href="#"><i class="icon-linkedin"></i></a>
-						<a href="#"><img src="assets/img/icons/icon_104.png"> </a>
-						<!--<a href="#"><i class="icon-apple"></i></a>-->
 
-					</p>
+						<a href="#"><i class="icon-linkedin"></i></a>
+						<a href="#"><img src="assets/img/icons/icon_104.png" style="max-height: 28px; margin-bottom: 1px;"> </a>
+
+					</p>-->
 				</div>
 			</div><!--/.row -->
 		</div><!--/.container -->
@@ -437,8 +405,9 @@
 	
 	<div id="c">
 		<div class="container">
-			<p>Created by <a href="http://www.blacktie.co">BLACKTIE.CO</a></p>
-		
+			<!--<p>Created by <a href="http://www.blacktie.co">BLACKTIE.CO</a></p>-->
+			<p>Latest Update <font style="color: #f85c37">2016-03-09</font></p>
+
 		</div>
 	</div>
 	
@@ -447,5 +416,15 @@
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="assets/js/bootstrap.js"></script>
+
+
+    <script type="text/javascript">
+		$( document ).ready(function() {
+			$(".btnPrint").printPage({
+				url: "index.html",
+				showMessage: false
+			});
+		});
+	</script>
   </body>
 </html>
