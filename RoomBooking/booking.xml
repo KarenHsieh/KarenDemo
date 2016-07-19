@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<monthly>
+  <event>
+    <id>1</id>
+    <name>會議室 - 共教中心</name>
+    <startdate>2016-06-20</startdate>
+    <enddate>2016-06-20</enddate>
+    <starttime>00:00:00</starttime>
+    <endtime>00:00:00</endtime>
+    <color>#ff9900</color>
+  </event>
+  <event>
+    <id>5</id>
+    <name>會議室 - 　安老師</name>
+    <startdate>2016-06-22</startdate>
+    <enddate>2016-06-22</enddate>
+    <starttime>00:00:00</starttime>
+    <endtime>00:00:00</endtime>
+    <color>#ff9900</color>
+  </event>
+  <event>
+    <id>2</id>
+    <name>會議室 - 學院(院教評)</name>
+    <startdate>2016-06-23</startdate>
+    <enddate>2016-06-23</enddate>
+    <starttime>00:00:00</starttime>
+    <endtime>00:00:00</endtime>
+    <color>#ff9900</color>
+  </event>
+  <event>
+    <id>6</id>
+    <name>2樓大廳 - 食科營</name>
+    <startdate>2016-06-26</startdate>
+    <enddate>2016-06-26</enddate>
+    <starttime>00:00:00</starttime>
+    <endtime>00:00:00</endtime>
+    <color>#cc33ff</color>
+  </event>
+  <event>
+    <id>3</id>
+    <name>遠距教室 - 共教中心</name>
+    <startdate>2016-07-05</startdate>
+    <enddate>2016-07-05</enddate>
+    <starttime>00:00:00</starttime>
+    <endtime>00:00:00</endtime>
+    <color>#1a75ff</color>
+  </event>
+  <event>
+    <id>4</id>
+    <name>遠距教室 - 共教中(海　</name>
+    <startdate>2016-07-05</startdate>
+    <enddate>2016-07-05</enddate>
+    <starttime>00:00:14</starttime>
+    <endtime>00:00:17</endtime>
+    <color>#1a75ff</color>
+  </event>
+  <event>
+    <id>7</id>
+    <name>遠距教室 - 謝玉玲</name>
+    <startdate>2016-07-18</startdate>
+    <enddate>2016-07-18</enddate>
+    <starttime>00:00:00</starttime>
+    <endtime>00:00:00</endtime>
+    <color>#1a75ff</color>
+  </event>
+  <event>
+    <id>8</id>
+    <name>遠距教室 - 謝玉玲</name>
+    <startdate>2016-07-30</startdate>
+    <enddate>2016-07-30</enddate>
+    <starttime>00:00:00</starttime>
+    <endtime>00:00:00</endtime>
+    <color>#1a75ff</color>
+  </event>
+</monthly>
