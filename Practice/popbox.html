@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>PopBox</title>
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+	<div class="col-md-3" id="target_block"></div>
+</body>
+</html>
+
+<script type="text/javascript">
+
+	function Popbox(msg) {
+		this.msg = msg;
+		//this.type = type;
+		this.template = {
+			"info" : "<div class=\"panel panel-default\" id=\"popbox_info\"><div class=\"panel-body\">{{msg}}</div></div>",
+			"success": "<div class=\"panel panel-success\" id=\"popbox_error\"><div class=\"panel-body\">{{msg}}</div></div>",
+			"error" : "<div class=\"panel panel-danger\" id=\"popbox_success\"><div class=\"panel-body\">{{msg}}</div></div>"
+		}
+	}
+
+	Popbox.prototype.show = function(type){
+		var box_template = this.template[type];
+		console.info(box_template);
+		var box = box_template.replace("{{msg}}", this.msg);
+		//console.info(box);
+		var target = document.getElementById("target_block");
+		target.innerHTML = box;
+	}
+
+	var str = "<font style=\"color: red\">this is test msg</font>";
+	var test = new Popbox(str);
+	test.show("success");
+
+
+
+</script>
