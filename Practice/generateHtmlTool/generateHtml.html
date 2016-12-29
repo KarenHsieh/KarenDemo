@@ -41,15 +41,51 @@
 
 					</div>
 				</li>
+
 				<li>
-					<div class="collapsible-header teal lighten-2"><span class="badge"></span><i class="material-icons"></i>2. 產生內容</div>
+					<div class="collapsible-header teal lighten-2"><span class="badge"></span><i class="material-icons"></i>2. 建立此頁規格</div>
+					<div class="collapsible-body">
+						<div class="row">
+							<div class="col s6 offset-s3">
+								<blockquote>
+									貼上的順序會影響欄位名稱和DB名稱的mapping
+								</blockquote>
+							</div>
+
+							<div class="col s6 offset-s3">
+								<div class="input-field col s12 center-align">
+									<textarea id="db_name" class="materialize-textarea"></textarea>
+									<label for="db_name">DB名稱</label>
+								</div>
+							</div>
+
+							<div class="col s6 offset-s3">
+								<div class="input-field col s12 center-align">
+									<textarea id="field_name" class="materialize-textarea"></textarea>
+									<label for="field_name">欄位名稱</label>
+								</div>
+							</div>
+
+							<div class="col s6 offset-s3">
+								<div class="input-field col s12 center-align">
+									<a class="waves-effect waves-light btn" id="update_data">更新資料</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</li>
+
+				<li>
+					<div class="collapsible-header teal lighten-2"><span class="badge"></span><i class="material-icons"></i>3. 產生內容</div>
 					<div class="collapsible-body">
 						<form>
 							<div class="row">
 								<div class="col s6 offset-s3">
 									<div class="input-field col s12">
-										<input type="text" id="title">
-										<label for="title">欄位名稱：</label>
+										<!--<input type="text" id="title">
+										<label for="title">欄位名稱：</label>-->
+										<select id="title"></select>
+										<label>欄位名稱</label>
 									</div>
 								</div>
 
@@ -67,7 +103,16 @@
 											<option value="one">一列</option>
 										</select>
 										<label>欄位寬度</label>
+									</div>
+								</div>
 
+								<div class="col s6 offset-s3">
+									<div class="input-field col s12">
+										<select id="type">
+											<option value="select"></option>
+											<option value="radio">一列</option>
+										</select>
+										<label>欄位內容物格式</label>
 									</div>
 								</div>
 
@@ -83,25 +128,12 @@
 					</div>
 				</li>
 
-				<!--<li>
-					<div class="collapsible-header teal lighten-2"><span class="badge"></span><i class="material-icons"></i>3. 下載檔案</div>
-					<div class="collapsible-body">
-						<div class="row">
-							<div class="col s6 offset-s3">
-								<div class="input-field col s12 center-align">
-									<a class="waves-effect waves-light btn" id="download">下載</a>
-								</div>
-							</div>
-						</div>
-					</div>
-				</li>-->
-
 			</ul>
 
 			<div class="col s12">
 				<div class="input-field col s12">
-					<textarea id="textarea1" class="materialize-textarea"></textarea>
-					<label for="textarea1">Code預覽</label>
+					<textarea id="code" class="materialize-textarea"></textarea>
+					<label for="code">Code預覽</label>
 				</div>
 			</div>
 		</div>
@@ -131,21 +163,18 @@
 	};
 
 
-
 	var htmlcode = function() {
 		this.whole_row = '<div class="rwd_form_row"><div class="rwd_form_left"></div><div class="rwd_form_right"></div></div>';
 		this.half_row = '<div class="rwd_form_row half"><div class="rwd_form_left"></div><div class="rwd_form_right"><input name="elementName" type="text" id="elementName"/></div></div>';
 	}
 
 
-
-
-
-
 	$(document).ready(function () {
 
     	$('select').material_select();
-
+		$("textarea").on("change", function(){
+			$(this).trigger('autoresize');
+		});
 		$(".collapsible-header:first").click();
 
 
@@ -165,18 +194,43 @@
 					res = res.replace('<div class="rwd_form_caption"></div>', '<div class="rwd_form_caption">'+subject+'</div>');
 				}
 
-				var pre_code = $("textarea").text();
-				$("textarea").text(pre_code+"\r\n\r\n"+res).trigger('autoresize');
+				var pre_code = $("#code").text();
+				$("#code").text(pre_code+"\r\n\r\n"+res).trigger('autoresize');
 				$(".collapsible-header:eq(1)").click();
 				//console.info(res);
 			});
-
-
 		})
+
+
+		$("#update_data").on("click", function(){
+
+			var field_name = [];
+			var db_name = [];
+
+			var f_lines = $("#field_name").val().split('\n');
+			for(var i = 0;i < f_lines.length;i++){
+				field_name.push(f_lines[i]);
+			}
+
+			var d_lines = $("#db_name").val().split('\n');
+			for(var i = 0;i < d_lines.length;i++){
+				db_name.push(d_lines[i]);
+			}
+
+
+			$("#title").find("option").remove().material_select();
+			$.each(field_name, function(index, data){
+				$("#title").append("<option value='"+db_name[index]+"'>"+data+"</option>");
+				$("#title").material_select();
+			});
+			$(".collapsible-header:eq(2)").click();
+		});
+
 
 		$("#add_btn").on("click", function() {
 			var row_type = $("#row_type").find(":selected").val();
-			var title = $("#title").val();
+			var title = $("#title").find(":selected").text();
+			//console.info(title);
 			var is_required = $("#is_required").val();
 
 			var getCode = new htmlcode();
@@ -200,21 +254,14 @@
 
 			}
 
-			//$("xmp").text("");
-			//$("xmp").text(temp_code);
-
-			$("#title").val("");
 			$("#is_required").prop('checked', false);
-			var pre_code = $("textarea").text();
+			var pre_code = $("#code").text();
 
 			var full_code = pre_code.replace("//FillContent", temp_code+"\r\n //FillContent");
-			$("textarea").text(full_code).trigger('autoresize');
+			$("#code").text(full_code).trigger('autoresize');
 		});
 
-		/*$("#download").on("click", function(){
-			$(this).attr({target: '_blank',
-				href  : 'http://localhost/directory/file.pdf'});
-		});*/
+
 	});
 
 </script>
