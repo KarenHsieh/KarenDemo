@@ -82,6 +82,17 @@
 							<div class="row">
 								<div class="col s6 offset-s3">
 									<div class="input-field col s12">
+										<select id="row_type">
+											<option value="half">4欄</option>
+											<option value="one">2欄</option>
+										</select>
+										<label>欄位寬度</label>
+									</div>
+								</div>
+
+
+								<div class="col s6 offset-s3">
+									<div class="input-field col s12">
 										<!--<input type="text" id="title">
 										<label for="title">欄位名稱：</label>-->
 										<select id="title"></select>
@@ -96,21 +107,16 @@
 									</p>
 								</div>
 
-								<div class="col s6 offset-s3">
-									<div class="input-field col s12">
-										<select id="row_type">
-											<option value="half">1/2列</option>
-											<option value="one">一列</option>
-										</select>
-										<label>欄位寬度</label>
-									</div>
-								</div>
+
 
 								<div class="col s6 offset-s3">
 									<div class="input-field col s12">
 										<select id="type">
-											<option value="select"></option>
-											<option value="radio">一列</option>
+											<option value="text">Input Text</option>
+											<option value="select">Select</option>
+											<option value="checkbox">checkbox</option>
+											<option value="radio">Radio</option>
+											<option value="textarea">Textarea</option>
 										</select>
 										<label>欄位內容物格式</label>
 									</div>
@@ -165,7 +171,13 @@
 
 	var htmlcode = function() {
 		this.whole_row = '<div class="rwd_form_row"><div class="rwd_form_left"></div><div class="rwd_form_right"></div></div>';
-		this.half_row = '<div class="rwd_form_row half"><div class="rwd_form_left"></div><div class="rwd_form_right"><input name="elementName" type="text" id="elementName"/></div></div>';
+		this.half_row = '<div class="rwd_form_row 4col"><div class="rwd_form_left"></div><div class="rwd_form_right"></div></div>';
+
+		this.input_text = '<input name="db_name" type="text" id="txt_" />';
+		this.textarea = '<textarea name="db_name" id="tarea"></textarea>';
+		this.select = '<select name="db_name" id="slt_"></select>';
+		this.checkbox = '<input name="db_name" type="checkbox" id="checkbox_" />';
+		this.radio = '<input name="db_name" type="radio" id="radio_" />';
 	}
 
 
@@ -230,8 +242,9 @@
 		$("#add_btn").on("click", function() {
 			var row_type = $("#row_type").find(":selected").val();
 			var title = $("#title").find(":selected").text();
-			//console.info(title);
+			var db_name = $("#title").find(":selected").val();
 			var is_required = $("#is_required").val();
+			var type = $("#type").find(":selected").val();
 
 			var getCode = new htmlcode();
 
@@ -241,6 +254,7 @@
 				temp_code = getCode.whole_row;
 			} else {
 				temp_code = getCode.half_row;
+				temp_code = temp_code.replace("rwd_form clearfix", "rwd_form clearfix complex");
 			}
 
 
@@ -253,6 +267,32 @@
 				temp_code = temp_code.replace('<div class="rwd_form_left"></div>', '<div class="rwd_form_left">' + title + ": </div>");
 
 			}
+
+			var inner_code = "";
+			switch(type){
+				case "text":
+					inner_code = getCode.input_text;
+					inner_code = inner_code.replace("db_name", db_name).replace("txt_", "txt_"+db_name);
+					break;
+				case "select":
+					inner_code = getCode.select;
+					inner_code = inner_code.replace("db_name", db_name).replace("slt_", "slt_"+db_name);
+					break;
+				case "checkbox":
+					inner_code = getCode.checkbox;
+					inner_code = inner_code.replace("db_name", db_name).replace("checkbox_", "checkbox_"+db_name);
+					break;
+				case "radio":
+					inner_code = getCode.radio;
+					inner_code = inner_code.replace("db_name", db_name).replace("radio_", "radio_"+db_name);
+					break;
+				case "textarea":
+					inner_code = getCode.textarea;
+					inner_code = inner_code.replace("db_name", db_name).replace("tarea_", "tarea_"+db_name);
+					break;
+			}
+
+			temp_code = temp_code.replace('<div class="rwd_form_right">','<div class="rwd_form_right">'+inner_code);
 
 			$("#is_required").prop('checked', false);
 			var pre_code = $("#code").text();
