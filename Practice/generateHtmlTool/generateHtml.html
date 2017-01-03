@@ -10,6 +10,10 @@
   	<!-- Compiled and minified JavaScript -->
   	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js"></script>
 
+	<script src="notify.js"></script>
+
+	<script src="generateHtml.js"></script>
+
 	<style>
 		footer {
 			position: fixed;
@@ -124,6 +128,8 @@
 											<option value="checkbox">checkbox</option>
 											<option value="radio">Radio</option>
 											<option value="textarea">Textarea</option>
+											<option value="datepicker">Datepicker</option>
+											<option value="address">地址區塊</option>
 										</select>
 										<label>欄位內容物格式</label>
 									</div>
@@ -163,161 +169,4 @@
 </body>
 </html>
 
-<script type="text/javascript">
-	//var G_SCOPE = "";
 
-	function getScope(responseScope) {
-		$.ajax({
-			url: "getScope.php",
-			data: "",
-			type:"POST",
-			dataType:'html',
-
-			success: function(msg){
-				responseScope(msg);
-			},
-
-			error:function(xhr, ajaxOptions, thrownError){
-				alert(xhr.status);
-				//alert(thrownError);
-			}
-		});
-	};
-
-
-	var htmlcode = function() {
-		this.whole_row = '<div class="rwd_form_row"><div class="rwd_form_left"></div><div class="rwd_form_right"></div></div>';
-		this.half_row = '<div class="rwd_form_row 4col"><div class="rwd_form_left"></div><div class="rwd_form_right"></div></div>';
-
-		this.input_text = '<input name="db_name" type="text" id="txt_" />';
-		this.textarea = '<textarea name="db_name" id="tarea"></textarea>';
-		this.select = '<select name="db_name" id="slt_"></select>';
-		this.checkbox = '<input name="db_name" type="checkbox" id="checkbox_" />';
-		this.radio = '<input name="db_name" type="radio" id="radio_" />';
-	}
-
-
-	$(document).ready(function () {
-
-    	$('select').material_select();
-		$("textarea").on("change", function(){
-			$(this).trigger('autoresize');
-		});
-		$(".collapsible-header:first").click();
-
-
-		$("#add_scope").on("click", function() {
-			var file_name = $("#file_name").val();
-			var subject = $("#subject").val();
-
-			getScope(function(res){
-				//console.info(typeof (res));
-
-				if(file_name != ""){
-					res = res.replace("thisisjsfile", file_name);
-				}
-
-				if(subject != ""){
-					res = res.replace('<title></title>', '<title>'+subject+'</title>');
-					res = res.replace('<div class="rwd_form_caption"></div>', '<div class="rwd_form_caption">'+subject+'</div>');
-				}
-
-				var pre_code = $("#code").text();
-				$("#code").text(pre_code+"\r\n\r\n"+res).trigger('autoresize');
-				$(".collapsible-header:eq(1)").click();
-				//console.info(res);
-			});
-		})
-
-
-		$("#update_data").on("click", function(){
-
-			var field_name = [];
-			var db_name = [];
-
-			var f_lines = $("#field_name").val().split('\n');
-			for(var i = 0;i < f_lines.length;i++){
-				field_name.push(f_lines[i]);
-			}
-
-			var d_lines = $("#db_name").val().split('\n');
-			for(var i = 0;i < d_lines.length;i++){
-				db_name.push(d_lines[i]);
-			}
-
-
-			$("#title").find("option").remove().material_select();
-			$.each(field_name, function(index, data){
-				$("#title").append("<option value='"+db_name[index]+"'>"+data+"</option>");
-				$("#title").material_select();
-			});
-			$(".collapsible-header:eq(2)").click();
-		});
-
-
-		$("#add_btn").on("click", function() {
-			var row_type = $("#row_type").find(":selected").val();
-			var title = $("#title").find(":selected").text();
-			var db_name = $("#title").find(":selected").val();
-			var is_required = $("#is_required").val();
-			var type = $("#type").find(":selected").val();
-
-			var getCode = new htmlcode();
-
-			var temp_code = "";
-
-			if(row_type == "one"){
-				temp_code = getCode.whole_row;
-			} else {
-				temp_code = getCode.half_row;
-				temp_code = temp_code.replace("rwd_form clearfix", "rwd_form clearfix complex");
-			}
-
-
-			if (is_required == "y" && title != "") {
-
-				temp_code = temp_code.replace('<div class=\"rwd_form_left\"></div>', '<div class="rwd_form_left"><span class="required">' + title + ": </span></div>");
-
-			} else if (is_required != "y" && title != "") {
-
-				temp_code = temp_code.replace('<div class="rwd_form_left"></div>', '<div class="rwd_form_left">' + title + ": </div>");
-
-			}
-
-			var inner_code = "";
-			switch(type){
-				case "text":
-					inner_code = getCode.input_text;
-					inner_code = inner_code.replace("db_name", db_name).replace("txt_", "txt_"+db_name);
-					break;
-				case "select":
-					inner_code = getCode.select;
-					inner_code = inner_code.replace("db_name", db_name).replace("slt_", "slt_"+db_name);
-					break;
-				case "checkbox":
-					inner_code = getCode.checkbox;
-					inner_code = inner_code.replace("db_name", db_name).replace("checkbox_", "checkbox_"+db_name);
-					break;
-				case "radio":
-					inner_code = getCode.radio;
-					inner_code = inner_code.replace("db_name", db_name).replace("radio_", "radio_"+db_name);
-					break;
-				case "textarea":
-					inner_code = getCode.textarea;
-					inner_code = inner_code.replace("db_name", db_name).replace("tarea_", "tarea_"+db_name);
-					break;
-			}
-
-			temp_code = temp_code.replace('<div class="rwd_form_right">','<div class="rwd_form_right">'+inner_code);
-
-			$("#is_required").prop('checked', false);
-			var pre_code = $("#code").text();
-
-			var full_code = pre_code.replace("//FillContent", temp_code+"\r\n //FillContent");
-			$("#code").text(full_code).trigger('autoresize');
-		});
-
-
-	});
-
-</script>
