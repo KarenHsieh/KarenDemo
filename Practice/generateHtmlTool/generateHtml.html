@@ -10,8 +10,6 @@
   	<!-- Compiled and minified JavaScript -->
   	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js"></script>
 
-	<script src="notify.js"></script>
-
 	<script src="generateHtml.js"></script>
 
 	<style>
@@ -19,18 +17,25 @@
 			position: fixed;
 			bottom: 0px;
 			width: 100vw;
+			z-index: 9999;
+		}
+
+		#js_btn {
+			position: fixed;
+			top: 15px;
+			right: 15px;
 		}
 	</style>
 </head>
 
 <body>
+	<a class="btn waves-effect waves-light red" id="js_btn"><i class="material-icons">js</i></a>
 	<div class="container">
-
 
 		<div class="col s12">
 			<ul class="collapsible" data-collapsible="accordion">
 				<li>
-					<div class="collapsible-header teal lighten-2"><span class="badge"></span><i class="material-icons"></i>1. 建立基本架構</div>
+					<div class="collapsible-header teal lighten-2"><i class="material-icons"></i>1. 建立基本架構</div>
 					<div class="collapsible-body">
 						<div class="row">
 							<div class="col s6 offset-s3">
@@ -130,6 +135,7 @@
 											<option value="textarea">Textarea</option>
 											<option value="datepicker">Datepicker</option>
 											<option value="address">地址區塊</option>
+											<option value="label">label</option>
 										</select>
 										<label>欄位內容物格式</label>
 									</div>
@@ -138,7 +144,8 @@
 
 								<div class="col s6 offset-s3">
 									<div class="input-field col s12">
-										<a class="waves-effect waves-light btn" id="add_btn">加入</a>
+										<a class="waves-effect waves-light btn" id="add_btn">加入第一欄</a>
+										<a class="waves-effect waves-light light-blue darken-3 btn" id="add_second">加入第二欄</a>
 									</div>
 								</div>
 
